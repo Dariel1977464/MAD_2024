@@ -1,0 +1,68 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|d:\\clays\\documents\\mad_2024\\mad2024\\pantallas\\puestos_capturar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|solutionrelative:pantallas\\puestos_capturar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|D:\\clays\\Documents\\MAD_2024\\MAD2024\\enlacedb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|solutionrelative:enlacedb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|D:\\clays\\Documents\\MAD_2024\\MAD2024\\pantallas\\puestos_capturar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|solutionrelative:pantallas\\puestos_capturar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PUESTOS_capturar.cs",
+              "DocumentMoniker": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\Pantallas\\PUESTOS_capturar.cs",
+              "RelativeDocumentMoniker": "Pantallas\\PUESTOS_capturar.cs",
+              "ToolTip": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\Pantallas\\PUESTOS_capturar.cs",
+              "RelativeToolTip": "Pantallas\\PUESTOS_capturar.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAUAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T01:33:47.908Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PUESTOS_capturar.cs [Design]",
+              "DocumentMoniker": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\Pantallas\\PUESTOS_capturar.cs",
+              "RelativeDocumentMoniker": "Pantallas\\PUESTOS_capturar.cs",
+              "ToolTip": "D:\\Descargas\\Visual Studio\\MAD2024-Nuevo\\Pantallas\\PUESTOS_capturar.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\Descargas\\Visual Studio\\MAD2024-Nuevo\\Pantallas\\PUESTOS_capturar.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T01:30:20.246Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EnlaceDB.cs",
+              "DocumentMoniker": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\EnlaceDB.cs",
+              "RelativeDocumentMoniker": "EnlaceDB.cs",
+              "ToolTip": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\EnlaceDB.cs",
+              "RelativeToolTip": "EnlaceDB.cs",
+              "ViewState": "AQIAAHgBAAAAAAAAAAAuwAkBAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T01:29:50.3Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

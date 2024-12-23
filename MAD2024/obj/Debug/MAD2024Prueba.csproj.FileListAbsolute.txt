@@ -1,0 +1,49 @@
+D:\Descargas\Visual Studio\MAD2024Prueba\bin\Debug\MAD2024Prueba.exe.config
+D:\Descargas\Visual Studio\MAD2024Prueba\bin\Debug\MAD2024Prueba.exe
+D:\Descargas\Visual Studio\MAD2024Prueba\bin\Debug\MAD2024Prueba.pdb
+D:\Descargas\Visual Studio\MAD2024Prueba\obj\Debug\MAD2024Prueba.csproj.AssemblyReference.cache
+D:\Descargas\Visual Studio\MAD2024Prueba\obj\Debug\MAD2024Prueba.Properties.Resources.resources
+D:\Descargas\Visual Studio\MAD2024Prueba\obj\Debug\MAD2024Prueba.csproj.GenerateResource.cache
+D:\Descargas\Visual Studio\MAD2024Prueba\obj\Debug\MAD2024Prueba.csproj.CoreCompileInputs.cache
+D:\Descargas\Visual Studio\MAD2024Prueba\obj\Debug\MAD2024Prueba.exe
+D:\Descargas\Visual Studio\MAD2024Prueba\obj\Debug\MAD2024Prueba.pdb
+D:\Descargas\Visual Studio\MAD2024-Nuevo\bin\Debug\MAD2024Prueba.exe.config
+D:\Descargas\Visual Studio\MAD2024-Nuevo\bin\Debug\MAD2024Prueba.exe
+D:\Descargas\Visual Studio\MAD2024-Nuevo\bin\Debug\MAD2024Prueba.pdb
+D:\Descargas\Visual Studio\MAD2024-Nuevo\obj\Debug\MAD2024Prueba.csproj.AssemblyReference.cache
+D:\Descargas\Visual Studio\MAD2024-Nuevo\obj\Debug\MAD2024Prueba.Form1.resources
+D:\Descargas\Visual Studio\MAD2024-Nuevo\obj\Debug\MAD2024Prueba.Properties.Resources.resources
+D:\Descargas\Visual Studio\MAD2024-Nuevo\obj\Debug\MAD2024Prueba.csproj.GenerateResource.cache
+D:\Descargas\Visual Studio\MAD2024-Nuevo\obj\Debug\MAD2024Prueba.csproj.CoreCompileInputs.cache
+D:\Descargas\Visual Studio\MAD2024-Nuevo\obj\Debug\MAD2024Prueba.exe
+D:\Descargas\Visual Studio\MAD2024-Nuevo\obj\Debug\MAD2024Prueba.pdb
+D:\Descargas\Visual Studio\MAD2024-Nuevo\obj\Debug\MAD2024Prueba.MENU.resources
+D:\Descargas\Visual Studio\MAD2024-Nuevo\obj\Debug\MAD2024Prueba.Pantallas.MENU_Main.resources
+D:\Descargas\Visual Studio\MAD2024-Nuevo\obj\Debug\MAD2024Prueba.Pantallas.CONCEPTOS_capturar.resources
+D:\Descargas\Visual Studio\MAD2024-Nuevo\obj\Debug\MAD2024Prueba.Pantallas.CONCEPTOS_catalogo.resources
+D:\Descargas\Visual Studio\MAD2024-Nuevo\obj\Debug\MAD2024Prueba.Pantallas.DEPARTAMENTOS_capturar.resources
+D:\Descargas\Visual Studio\MAD2024-Nuevo\obj\Debug\MAD2024Prueba.Pantallas.EMPLEADOS_capturar.resources
+D:\Descargas\Visual Studio\MAD2024-Nuevo\obj\Debug\MAD2024Prueba.Pantallas.NOMINA_CALCULAR.resources
+D:\Descargas\Visual Studio\MAD2024-Nuevo\obj\Debug\MAD2024Prueba.Pantallas.PUESTOS_capturar.resources
+D:\Descargas\Visual Studio\MAD2024-Nuevo\obj\Debug\MAD2024Prueba.Pantallas.NOMINA_Reportes_2.resources
+D:\Descargas\Visual Studio\MAD2024-Nuevo\obj\Debug\MAD2024Prueba.Pantallas.NOMINA_Reporte_General.resources
+D:\clays\Documents\MAD_2024\MAD2024\bin\Debug\MAD2024Prueba.exe.config
+D:\clays\Documents\MAD_2024\MAD2024\bin\Debug\MAD2024Prueba.exe
+D:\clays\Documents\MAD_2024\MAD2024\bin\Debug\MAD2024Prueba.pdb
+D:\clays\Documents\MAD_2024\MAD2024\obj\Debug\MAD2024Prueba.csproj.AssemblyReference.cache
+D:\clays\Documents\MAD_2024\MAD2024\obj\Debug\MAD2024Prueba.Pantallas.CONCEPTOS_capturar.resources
+D:\clays\Documents\MAD_2024\MAD2024\obj\Debug\MAD2024Prueba.Pantallas.CONCEPTOS_catalogo.resources
+D:\clays\Documents\MAD_2024\MAD2024\obj\Debug\MAD2024Prueba.Pantallas.DEPARTAMENTOS_capturar.resources
+D:\clays\Documents\MAD_2024\MAD2024\obj\Debug\MAD2024Prueba.Pantallas.EMPLEADOS_capturar.resources
+D:\clays\Documents\MAD_2024\MAD2024\obj\Debug\MAD2024Prueba.Form1.resources
+D:\clays\Documents\MAD_2024\MAD2024\obj\Debug\MAD2024Prueba.MENU.resources
+D:\clays\Documents\MAD_2024\MAD2024\obj\Debug\MAD2024Prueba.Pantallas.MENU_Main.resources
+D:\clays\Documents\MAD_2024\MAD2024\obj\Debug\MAD2024Prueba.Pantallas.NOMINA_CALCULAR.resources
+D:\clays\Documents\MAD_2024\MAD2024\obj\Debug\MAD2024Prueba.Pantallas.NOMINA_Reportes_2.resources
+D:\clays\Documents\MAD_2024\MAD2024\obj\Debug\MAD2024Prueba.Pantallas.NOMINA_Reporte_General.resources
+D:\clays\Documents\MAD_2024\MAD2024\obj\Debug\MAD2024Prueba.Pantallas.PUESTOS_capturar.resources
+D:\clays\Documents\MAD_2024\MAD2024\obj\Debug\MAD2024Prueba.Properties.Resources.resources
+D:\clays\Documents\MAD_2024\MAD2024\obj\Debug\MAD2024Prueba.csproj.GenerateResource.cache
+D:\clays\Documents\MAD_2024\MAD2024\obj\Debug\MAD2024Prueba.csproj.CoreCompileInputs.cache
+D:\clays\Documents\MAD_2024\MAD2024\obj\Debug\MAD2024Prueba.exe
+D:\clays\Documents\MAD_2024\MAD2024\obj\Debug\MAD2024Prueba.pdb

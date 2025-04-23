@@ -194,7 +194,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "CONCEPTOS_capturar";
-            this.Text = "CONCEPTOS_Agregar";
+            this.Text = "AGREGAR CONCEPTOS";
             this.Load += new System.EventHandler(this.CONCEPTOS_capturar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

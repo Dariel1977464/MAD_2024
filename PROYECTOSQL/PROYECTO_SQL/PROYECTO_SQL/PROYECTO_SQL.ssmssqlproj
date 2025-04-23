@@ -43,6 +43,12 @@
           <AssociatedConnUserName>ClayserUsuarioPrueba</AssociatedConnUserName>
           <FullPath>TablasTemporales.sql</FullPath>
         </FileNode>
+        <FileNode Name="Temp_Selects.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-20ALCHGK\SQLEXPRESS:False:ClayserUsuarioPrueba</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-20ALCHGK\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName>ClayserUsuarioPrueba</AssociatedConnUserName>
+          <FullPath>Temp_Selects.sql</FullPath>
+        </FileNode>
       </Items>
     </LogicalFolder>
     <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">

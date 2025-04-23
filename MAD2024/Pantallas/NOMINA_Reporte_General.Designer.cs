@@ -108,7 +108,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "NOMINA_Reporte_General";
-            this.Text = "NOMINA_Reporte";
+            this.Text = "REPORTE GENERAL DE NOMINA";
             this.Load += new System.EventHandler(this.NOMINA_Reporte_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

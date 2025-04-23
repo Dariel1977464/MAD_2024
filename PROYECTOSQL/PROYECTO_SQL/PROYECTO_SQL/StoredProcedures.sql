@@ -8,7 +8,7 @@ CREATE PROCEDURE DBsp_EmpresaLLnear
 
 AS
 
-insert into Empresa(Razón_Social,Domicilio_Fiscal, DatosContacto, Registro_patronal, RFC, Fecha_inicio_operaciones)
+insert into Empresa(Razon_Social,Domicilio_Fiscal, Datos_Contacto, Registro_patronal, RFC, Fecha_inicio_operaciones)
 values(@Razón_Social,@Domicilio_Fiscal,@DatosContacto,@Registro_patronal,@RFC,@Fecha_inicio_operaciones)
 
 GO
@@ -21,25 +21,28 @@ CREATE PROCEDURE DBsp_PuestoLenar
 @Proporcion			float
 AS
 
-INSERT INTO Puesto(Nombre_de_Puesto, Proporcion)
+INSERT INTO Puesto(Titulo_de_Puesto, Proporcion)
 values(@Nombre_de_Puesto, @Proporcion)
 
 GO
 
 exec DBsp_PuestoLenar 'Puesto1', 0.5;
 
+
 CREATE PROCEDURE DBsp_DepartamentoLLenar
 
-@Nombre_Departamento		varchar(20),
+@Nombre_Departamento	varchar(20),
 @SueldoBase_Diario		money,
-@Empresa_FK				int
+@Empresa_ID				int
 
 AS
-INSERT INTO Departamento(Nombre_Departamento, SueldoBase_Diario, Empresa_FK)
-values(@Nombre_Departamento, @SueldoBase_Diario, @Empresa_FK)
+INSERT INTO Departamento(Nombre_Departamento, SueldoBase_Diario, Empresa_ID)
+values(@Nombre_Departamento, @SueldoBase_Diario, @Empresa_ID)
 GO
 
-exec DBsp_DepartamentoLLenar 'Gerente', 25, '5'; 
+exec DBsp_DepartamentoLLenar 'Compras', 25, '1'; 
+
+
 
 CREATE PROCEDURE DBsp_DireccionLLenar
 @Calle			varchar(20),
@@ -77,8 +80,8 @@ CREATE PROCEDURE DBsp_EmpleadoLLenar
 @DireccionFK		int
 AS
 INSERT INTO Empleado(Contraseña, Nombre, ApellidoPat, ApellidoMat, FechaNacimiento,
-CURP, NSS, RFC, Banco, NumeroCuenta, Email, Teléfonos, Empresa_FK, PuestoFK,
-DepartamentoFK, DireccionFK)
+CURP, NSS, RFC, Banco, NumeroCuenta, Email, Teléfonos, Empresa_ID, Puesto_ID,
+Departamento_ID, Direccion_ID)
 
 values(@Contraseña, @Nombre, @ApellidoPat, @ApellidoMat, @FechaNacimiento,
 @CURP, @NSS, @RFC, @Banco, @NumeroCuenta, @Email, @Teléfonos, @Empresa_FK, @PuestoFK,
@@ -86,11 +89,13 @@ values(@Contraseña, @Nombre, @ApellidoPat, @ApellidoMat, @FechaNacimiento,
 
 GO
 
+drop procedure DBsp_EmpleadoLLenar
+
 exec DBsp_EmpleadoLLenar '12345', 'Dariel', 'Perez', 'Chavez',
 '03/01/2003', 'curp12334', 'nss123', 'rfc123', 1, 213, 'outlook.com',
-'8241260908', 5, 3, 6, null 
+'8241260908', 1, 1, 2, null 
 
-exec DB_Select_Departamento
+select * from Puesto
 
 
 CREATE PROCEDURE DBsp_ConceptosDeNominaLLenar
@@ -178,22 +183,10 @@ AS
  select * from ReciboDeNomina
 GO
 
-drop procedure DB_Select_ReciboNomina
-
-exec DB_Select_Puesto
-
-delete from Puesto
-
---exec DBsp_EmpresaLLnear 'B','B','B','B','B','01/25/2013';
-								
-												
-						
-
---select * from Empresa
-
---truncate table Empresa
-
---delete from Empresa
 
 
 
+
+
+
+drop procedure BORRAR_TABLAS

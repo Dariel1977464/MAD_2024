@@ -72,7 +72,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "CONCEPTOS_catalogo";
-            this.Text = "CONCEPTOS_catalogo";
+            this.Text = "CATALOGO DE CONCEPTOS";
             this.Load += new System.EventHandler(this.CONCEPTOS_catalogo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

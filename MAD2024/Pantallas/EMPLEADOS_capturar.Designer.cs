@@ -298,7 +298,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "EMPLEADOS_capturar";
-            this.Text = "EMPLEADOS_Agregar";
+            this.Text = "AGREGAR EMPLEADOS";
             this.Load += new System.EventHandler(this.EMPLEADOS_capturar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

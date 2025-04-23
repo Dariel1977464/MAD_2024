@@ -166,7 +166,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
             this.Name = "MENU_Main";
-            this.Text = "MENU_Main";
+            this.Text = "MENU PRINCIPAL";
             this.Load += new System.EventHandler(this.MENU_Main_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

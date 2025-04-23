@@ -71,7 +71,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Name = "Form1";
-            this.Text = "Pantalla Inicio";
+            this.Text = "PANTALLA DE INICIO";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

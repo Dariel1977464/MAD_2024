@@ -111,7 +111,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button4);
             this.Name = "NOMINA_CALCULAR";
-            this.Text = "NOMINA CALCULAR";
+            this.Text = "CALCULO DE NOMINA";
             this.Load += new System.EventHandler(this.NOMINA_CALCULAR_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

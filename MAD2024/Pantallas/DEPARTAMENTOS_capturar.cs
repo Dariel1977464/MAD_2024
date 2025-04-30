@@ -13,6 +13,9 @@ namespace MAD2024Prueba.Pantallas
 {
     public partial class DEPARTAMENTOS_capturar : Form
     {
+        bool Alterar_Fila = false;
+        int Fila_Valor = 0;
+        int ID_Fila;
         public DEPARTAMENTOS_capturar()
         {
             InitializeComponent();
@@ -28,9 +31,49 @@ namespace MAD2024Prueba.Pantallas
             dataGridView1.DataSource = tblAlumnos;
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
+
+        private void button4_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ID_Fila = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            if (Alterar_Fila == true)
+            {
+                if (MessageBox.Show("Se alterará fila con ID: " + ID_Fila.ToString(), "¿Esta seguro?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    //Hacer Logica Aqui
+                }
+            }
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            this.Text = "AGREGAR DEPARTAMENTOS";
+            button3.Text = "Agregar";
+            Alterar_Fila = false;
+        }
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            this.Text = "MODIFICAR DEPARTAMENTOS";
+            button3.Text = "Modificar";
+            Alterar_Fila = true;
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            this.Text = "ELIMINAR DEPARTAMENTOS";
+            button3.Text = "Eliminar";
+            Alterar_Fila = true;
         }
     }
 }

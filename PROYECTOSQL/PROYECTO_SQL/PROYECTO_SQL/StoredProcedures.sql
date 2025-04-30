@@ -70,7 +70,6 @@ CREATE PROCEDURE DBsp_EmpleadoLLenar
 @NSS				varchar(11) ,
 @RFC				varchar(13) ,
 @Banco			int ,
-@NumeroCuenta	int ,
 @Email			varchar(30) ,
 @Teléfonos		varchar(10) ,
 
@@ -80,11 +79,11 @@ CREATE PROCEDURE DBsp_EmpleadoLLenar
 @DireccionFK		int
 AS
 INSERT INTO Empleado(Contraseña, Nombre, ApellidoPat, ApellidoMat, FechaNacimiento,
-CURP, NSS, RFC, Banco, NumeroCuenta, Email, Teléfonos, Empresa_ID, Puesto_ID,
+CURP, NSS, RFC, Cuenta_BancoID, Email, Teléfonos, Empresa_ID, Puesto_ID,
 Departamento_ID, Direccion_ID)
 
 values(@Contraseña, @Nombre, @ApellidoPat, @ApellidoMat, @FechaNacimiento,
-@CURP, @NSS, @RFC, @Banco, @NumeroCuenta, @Email, @Teléfonos, @Empresa_FK, @PuestoFK,
+@CURP, @NSS, @RFC, @Banco, @Email, @Teléfonos, @Empresa_FK, @PuestoFK,
 @DepartamentoFK, @DireccionFK)
 
 GO
@@ -123,6 +122,7 @@ values(@Banco, @NumeroCuenta)
 
 GO
 
+drop procedure DBsp_BancoLLenar
 
 CREATE PROCEDURE DBsp_ReciboDeNominaLLenar
 @Fecha_Recibo			date,
@@ -135,11 +135,13 @@ CREATE PROCEDURE DBsp_ReciboDeNominaLLenar
 AS
 
 INSERT INTO ReciboDeNomina(Fecha_Recibo, Cantidad_Depositada,
-Empresa_FK, Empleados_FK, Bancos_FK, GUID)
+Empresa_ID, Empleado_ID, GUID)
 VALUES(@Fecha_Recibo, @Cantidad_Depositada,
-@Empresa_FK, @Empleados_FK, @Bancos_FK, @GUID)
+@Empresa_FK, @Empleados_FK, @GUID)
 
 GO
+
+drop procedure DBsp_ReciboDeNominaLLenar
 
 exec DBsp_ReciboDeNominaLLenar '09/12/2024', 300, 5, 3, null, null
 

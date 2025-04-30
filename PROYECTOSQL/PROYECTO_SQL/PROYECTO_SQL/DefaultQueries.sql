@@ -22,9 +22,8 @@ EXEC sp_Gestiona_Deptos
 
 CREATE PROCEDURE sp_HacerPrueba
 AS
-SELECT * FROM Banco
+SELECT * FROM Cuenta_De_Banco
 GO
-
 
 
 

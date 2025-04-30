@@ -110,7 +110,7 @@
             // agregarEmpleadoToolStripMenuItem
             // 
             this.agregarEmpleadoToolStripMenuItem.Name = "agregarEmpleadoToolStripMenuItem";
-            this.agregarEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.agregarEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
             this.agregarEmpleadoToolStripMenuItem.Text = "Capturar Empleado";
             // 
             // cONCEPTOSToolStripMenuItem
@@ -159,10 +159,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MENU";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MENU";
             this.Load += new System.EventHandler(this.MENU_Load);
             this.menuStrip1.ResumeLayout(false);

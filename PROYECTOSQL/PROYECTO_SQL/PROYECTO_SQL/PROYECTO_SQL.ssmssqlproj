@@ -37,17 +37,29 @@
           <AssociatedConnUserName>ClayserUsuarioPrueba</AssociatedConnUserName>
           <FullPath>Tablas.sql</FullPath>
         </FileNode>
-        <FileNode Name="TablasTemporales.sql">
+        <FileNode Name="tarea_selects.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-20ALCHGK\SQLEXPRESS:False:ClayserUsuarioPrueba</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>LAPTOP-20ALCHGK\SQLEXPRESS</AssociatedConnSrvName>
           <AssociatedConnUserName>ClayserUsuarioPrueba</AssociatedConnUserName>
-          <FullPath>TablasTemporales.sql</FullPath>
+          <FullPath>tarea_selects.sql</FullPath>
         </FileNode>
-        <FileNode Name="Temp_Selects.sql">
+        <FileNode Name="tarea_tablas.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-20ALCHGK\SQLEXPRESS:False:ClayserUsuarioPrueba</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>LAPTOP-20ALCHGK\SQLEXPRESS</AssociatedConnSrvName>
           <AssociatedConnUserName>ClayserUsuarioPrueba</AssociatedConnUserName>
-          <FullPath>Temp_Selects.sql</FullPath>
+          <FullPath>tarea_tablas.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Temporal_Procedures.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-20ALCHGK\SQLEXPRESS:False:ClayserUsuarioPrueba</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-20ALCHGK\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName>ClayserUsuarioPrueba</AssociatedConnUserName>
+          <FullPath>Temporal_Procedures.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Temporal_Tablas.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-20ALCHGK\SQLEXPRESS:False:ClayserUsuarioPrueba</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-20ALCHGK\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName>ClayserUsuarioPrueba</AssociatedConnUserName>
+          <FullPath>Temporal_Tablas.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>

@@ -83,11 +83,23 @@
     <Compile Include="Pantallas\DEPARTAMENTOS_capturar.Designer.cs">
       <DependentUpon>DEPARTAMENTOS_capturar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pantallas\DEPARTAMENTOS_catalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\DEPARTAMENTOS_catalogo.Designer.cs">
+      <DependentUpon>DEPARTAMENTOS_catalogo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pantallas\EMPLEADOS_capturar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pantallas\EMPLEADOS_capturar.Designer.cs">
       <DependentUpon>EMPLEADOS_capturar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\EMPLEADOS_catalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\EMPLEADOS_catalogo.Designer.cs">
+      <DependentUpon>EMPLEADOS_catalogo.cs</DependentUpon>
     </Compile>
     <Compile Include="Pantallas\Form1.cs">
       <SubType>Form</SubType>
@@ -113,11 +125,17 @@
     <Compile Include="Pantallas\NOMINA_CALCULAR.Designer.cs">
       <DependentUpon>NOMINA_CALCULAR.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\NOMINA_Reportes_2.cs">
+    <Compile Include="Pantallas\NOMINA_HEADCOUNTER.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\NOMINA_Reportes_2.Designer.cs">
-      <DependentUpon>NOMINA_Reportes_2.cs</DependentUpon>
+    <Compile Include="Pantallas\NOMINA_HEADCOUNTER.Designer.cs">
+      <DependentUpon>NOMINA_HEADCOUNTER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\NOMINA_Reportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\NOMINA_Reportes.Designer.cs">
+      <DependentUpon>NOMINA_Reportes.cs</DependentUpon>
     </Compile>
     <Compile Include="Pantallas\NOMINA_Reporte_General.cs">
       <SubType>Form</SubType>
@@ -131,6 +149,12 @@
     <Compile Include="Pantallas\PUESTOS_capturar.Designer.cs">
       <DependentUpon>PUESTOS_capturar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pantallas\PUESTOS_catalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\PUESTOS_catalogo.Designer.cs">
+      <DependentUpon>PUESTOS_catalogo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Pantallas\CONCEPTOS_capturar.resx">
@@ -142,8 +166,14 @@
     <EmbeddedResource Include="Pantallas\DEPARTAMENTOS_capturar.resx">
       <DependentUpon>DEPARTAMENTOS_capturar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\DEPARTAMENTOS_catalogo.resx">
+      <DependentUpon>DEPARTAMENTOS_catalogo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\EMPLEADOS_capturar.resx">
       <DependentUpon>EMPLEADOS_capturar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\EMPLEADOS_catalogo.resx">
+      <DependentUpon>EMPLEADOS_catalogo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -157,14 +187,20 @@
     <EmbeddedResource Include="Pantallas\NOMINA_CALCULAR.resx">
       <DependentUpon>NOMINA_CALCULAR.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\NOMINA_Reportes_2.resx">
-      <DependentUpon>NOMINA_Reportes_2.cs</DependentUpon>
+    <EmbeddedResource Include="Pantallas\NOMINA_HEADCOUNTER.resx">
+      <DependentUpon>NOMINA_HEADCOUNTER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\NOMINA_Reportes.resx">
+      <DependentUpon>NOMINA_Reportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\NOMINA_Reporte_General.resx">
       <DependentUpon>NOMINA_Reporte_General.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\PUESTOS_capturar.resx">
       <DependentUpon>PUESTOS_capturar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\PUESTOS_catalogo.resx">
+      <DependentUpon>PUESTOS_catalogo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -174,6 +210,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -199,6 +236,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SkyDome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\darielOS.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

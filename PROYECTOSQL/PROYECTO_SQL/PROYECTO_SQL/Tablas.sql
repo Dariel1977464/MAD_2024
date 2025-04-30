@@ -235,7 +235,7 @@ drop table EmpleadoConceptos;
 GO
 
 
-
+sp_help Concepto
 
 
 

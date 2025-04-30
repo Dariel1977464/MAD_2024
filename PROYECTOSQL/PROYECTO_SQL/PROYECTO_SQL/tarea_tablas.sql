@@ -113,9 +113,8 @@ create table ReciboDeNomina(
 ID_Recibo				int IDENTITY(1, 1) primary key,
 Fecha_Recibo			date,
 Cantidad_Depositada		money,
-
 Empresa_ID				int,
-Empleado_ID			int,
+Empleado_ID				int,
 Banco_ID				int,
 GUID					varchar(30) 
 
@@ -127,8 +126,12 @@ constraint Rec_EmpleadoFK
 FOREIGN KEY (Empleado_ID) REFERENCES Empleado(ID_Empleado),
 
 constraint Rec_BancoFK
-FOREIGN KEY (Banco_ID) REFERENCES Banco(ID_Banco)
+FOREIGN KEY (Banco_ID) REFERENCES Cuenta_De_Banco(ID_Banco)
 );
 
+alter table ReciboDeNomina
+drop constraint Rec_BancoFK
 
+alter table ReciboDeNomina
+add constraint Rec_BancoFK FOREIGN KEY (Banco_ID) REFERENCES Cuenta_De_Banco(ID_Banco)
 

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MAD2024Prueba.Pantallas
 {
-    public partial class NOMINA_Reportes_2 : Form
+    public partial class NOMINA_Reportes : Form
     {
-        public NOMINA_Reportes_2()
+        public NOMINA_Reportes()
         {
             InitializeComponent();
         }
@@ -23,6 +23,11 @@ namespace MAD2024Prueba.Pantallas
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
         {
             Close();
         }

@@ -1,7 +1,4 @@
-create database Nomina_TEMPORAL;
-use Nomina_TEMPORAL;
-
-
+--TABLAS
 create table Empresa
 (
 ID_Empresa					int IDENTITY(1, 1) primary key,
@@ -13,14 +10,14 @@ Registro_patronal			varchar(11),
 RFC							varchar(13),
 Fecha_inicio_operaciones	date
 );
-
-
+-------------------------------------------------------------------------------------------------------------------------
 create table Puesto
 (
 ID_Puesto			int IDENTITY(1, 1) primary key,
 Titulo_de_Puesto	varchar(30),
 Proporcion			float
 );
+-------------------------------------------------------------------------------------------------------------------------
 create table Direccion
 (
 ID_Direccion    int IDENTITY(1, 1) primary key,
@@ -31,24 +28,23 @@ Municipio		varchar(20),
 Estado			varchar(20),
 Codigo_Postal	varchar(20)
 );
-
-
-
+-------------------------------------------------------------------------------------------------------------------------
 create table Concepto
 (
 ID_Concepto			int IDENTITY(1, 1) primary key,
 Nombre_Concepto		varchar(30),
 Tipo				bit, --(Deducción, Percepción)
 Obligatoria			bit,
-Mensual				bit
+Mensual				bit,
+Valor				MONEY NULL
 );
-
+-------------------------------------------------------------------------------------------------------------------------
 create table Cuenta_De_Banco(
 ID_Banco		int IDENTITY(1, 1) primary key,
 Banco			varchar(20),
 NumeroCuenta	varchar(20)
 );
-
+-------------------------------------------------------------------------------------------------------------------------
 create table Departamento
 (
 ID_Departamento			int IDENTITY(1, 1) primary key ,
@@ -56,9 +52,7 @@ Nombre_Departamento		varchar(20),
 SueldoBase_Diario		money,
 Empresa_ID				int
 );
-
-
-
+-------------------------------------------------------------------------------------------------------------------------
 create table Empleado
 (
 ID_Empleado 		int IDENTITY(1, 1) primary key,
@@ -78,17 +72,14 @@ Puesto_ID			int,
 Departamento_ID		int,
 Direccion_ID		int
 );
-
---ConceptosEmpleado
+-------------------------------------------------------------------------------------------------------------------------
 create table EmpleadoConceptos
 (
 ID_EmpleadoConceptos	int IDENTITY(1, 1) primary key,
 Empleado_ID				int,
 Concepto_ID				int
 );
-
-
---Recibo
+-------------------------------------------------------------------------------------------------------------------------
 create table ReciboDeNomina(
 ID_Recibo				int IDENTITY(1, 1) primary key,
 Fecha_Recibo			date,
@@ -98,3 +89,4 @@ Empleado_ID				int,
 Banco_ID				int,
 GUID					varchar(30) 
 );
+-------------------------------------------------------------------------------------------------------------------------

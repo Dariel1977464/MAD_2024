@@ -26,7 +26,7 @@ namespace MAD2024Prueba.Pantallas
             var conex = new EnlaceDB();
             var tblAlumnos = new DataTable();
 
-            tblAlumnos = conex.EmpleadosImprimir();
+            tblAlumnos = conex.IMPRIMIR_EMPLEADO();
 
             dataGridView1.DataSource = tblAlumnos;
         }
@@ -162,11 +162,6 @@ namespace MAD2024Prueba.Pantallas
         private void button4_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

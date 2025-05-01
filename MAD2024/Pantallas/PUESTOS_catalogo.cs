@@ -28,7 +28,7 @@ namespace MAD2024Prueba.Pantallas
             var conex = new EnlaceDB();
             var tblAlumnos = new DataTable();
 
-            tblAlumnos = conex.PuestosImprimir();
+            tblAlumnos = conex.IMPRIMIR_PUESTO();
 
             dataGridView1.DataSource = tblAlumnos;
         }

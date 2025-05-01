@@ -49,11 +49,17 @@
           <AssociatedConnUserName>ClayserUsuarioPrueba</AssociatedConnUserName>
           <FullPath>tarea_tablas.sql</FullPath>
         </FileNode>
-        <FileNode Name="Temporal_Procedures.sql">
+        <FileNode Name="Temporal_SP_LLENAR.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-20ALCHGK\SQLEXPRESS:False:ClayserUsuarioPrueba</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>LAPTOP-20ALCHGK\SQLEXPRESS</AssociatedConnSrvName>
           <AssociatedConnUserName>ClayserUsuarioPrueba</AssociatedConnUserName>
-          <FullPath>Temporal_Procedures.sql</FullPath>
+          <FullPath>Temporal_SP_LLENAR.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Temporal_SP_SELECTS.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-20ALCHGK\SQLEXPRESS:False:ClayserUsuarioPrueba</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-20ALCHGK\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName>ClayserUsuarioPrueba</AssociatedConnUserName>
+          <FullPath>Temporal_SP_SELECTS.sql</FullPath>
         </FileNode>
         <FileNode Name="Temporal_Tablas.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-20ALCHGK\SQLEXPRESS:False:ClayserUsuarioPrueba</AssociatedConnectionMoniker>

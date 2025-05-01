@@ -50,7 +50,7 @@ namespace MAD2024Prueba
         private void button1_Click(object sender, EventArgs e)
         {
             //ShowDialog(MENU);
-            Location = new Point(121, 164);
+            //Location = new Point(121, 164);
             MENU_Main frm = new MENU_Main();
             
             frm.ShowDialog();

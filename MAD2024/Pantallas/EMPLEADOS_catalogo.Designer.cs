@@ -39,7 +39,7 @@
             this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.Font = new System.Drawing.Font("Rockwell Condensed", 13.8F, System.Drawing.FontStyle.Bold);
-            this.button4.Location = new System.Drawing.Point(665, 12);
+            this.button4.Location = new System.Drawing.Point(899, 12);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(121, 54);
             this.button4.TabIndex = 55;
@@ -49,12 +49,14 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-1, 132);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 128);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 227);
+            this.dataGridView1.Size = new System.Drawing.Size(1032, 227);
             this.dataGridView1.TabIndex = 56;
             // 
             // EMPLEADOS_catalogo
@@ -62,7 +64,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(796, 355);
+            this.ClientSize = new System.Drawing.Size(1032, 355);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button4);
             this.Name = "EMPLEADOS_catalogo";

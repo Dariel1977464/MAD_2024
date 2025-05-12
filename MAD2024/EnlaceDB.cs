@@ -483,7 +483,149 @@ namespace WindowsFormsApplication1
                 return tabla;
             }
 
+            public DataTable IMPRIMIR_REPORTE_NOMINA()
+        {
+            var msg = "";
+            DataTable tabla = new DataTable();
+            try
+            {
+                conectar();
+                string qry = "SP_REPORTE_NOMINA";
+                //string qry = "DBsp_BancoLLenar";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandTimeout = 1200;
 
+                //var parametro1 = _comandosql.Parameters.Add("@Opc", SqlDbType.Int, 4);
+                //parametro1.Value = opc;
+
+
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(tabla);
+                // la ejecución del SP espera que regrese datos en formato tabla
+
+            }
+            catch (SqlException e)
+            {
+                msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            return tabla;
+        }
+
+            public DataTable IMPRIMIR_REPORTE_GENERAL()
+            {
+                var msg = "";
+                DataTable tabla = new DataTable();
+                try
+                {
+                    conectar();
+                    string qry = "SP_REPORTE_NOMINA";
+                    //string qry = "DBsp_BancoLLenar";
+                    _comandosql = new SqlCommand(qry, _conexion);
+                    _comandosql.CommandType = CommandType.StoredProcedure;
+                    _comandosql.CommandTimeout = 1200;
+
+                    //var parametro1 = _comandosql.Parameters.Add("@Opc", SqlDbType.Int, 4);
+                    //parametro1.Value = opc;
+
+
+                    _adaptador.SelectCommand = _comandosql;
+                    _adaptador.Fill(tabla);
+                    // la ejecución del SP espera que regrese datos en formato tabla
+
+                }
+                catch (SqlException e)
+                {
+                    msg = "Excepción de base de datos: \n";
+                    msg += e.Message;
+                    MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                finally
+                {
+                    desconectar();
+                }
+
+                return tabla;
+            }
+
+            public DataTable IMPRIMIR_REPORTE_HEADCOUNTER_1()
+            {
+                var msg = "";
+                DataTable tabla = new DataTable();
+                try
+                {
+                    conectar();
+                    string qry = "SP_REPORTE_NOMINA";
+                    //string qry = "DBsp_BancoLLenar";
+                    _comandosql = new SqlCommand(qry, _conexion);
+                    _comandosql.CommandType = CommandType.StoredProcedure;
+                    _comandosql.CommandTimeout = 1200;
+
+                    //var parametro1 = _comandosql.Parameters.Add("@Opc", SqlDbType.Int, 4);
+                    //parametro1.Value = opc;
+
+
+                    _adaptador.SelectCommand = _comandosql;
+                    _adaptador.Fill(tabla);
+                    // la ejecución del SP espera que regrese datos en formato tabla
+
+                }
+                catch (SqlException e)
+                {
+                    msg = "Excepción de base de datos: \n";
+                    msg += e.Message;
+                    MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                finally
+                {
+                    desconectar();
+                }
+
+                return tabla;
+            }
+
+            public DataTable IMPRIMIR_REPORTE_HEADCOUNTER_2()
+            {
+                var msg = "";
+                DataTable tabla = new DataTable();
+                try
+                {
+                    conectar();
+                    string qry = "SP_REPORTE_NOMINA";
+                    //string qry = "DBsp_BancoLLenar";
+                    _comandosql = new SqlCommand(qry, _conexion);
+                    _comandosql.CommandType = CommandType.StoredProcedure;
+                    _comandosql.CommandTimeout = 1200;
+
+                    //var parametro1 = _comandosql.Parameters.Add("@Opc", SqlDbType.Int, 4);
+                    //parametro1.Value = opc;
+
+
+                    _adaptador.SelectCommand = _comandosql;
+                    _adaptador.Fill(tabla);
+                    // la ejecución del SP espera que regrese datos en formato tabla
+
+                }
+                catch (SqlException e)
+                {
+                    msg = "Excepción de base de datos: \n";
+                    msg += e.Message;
+                    MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                finally
+                {
+                    desconectar();
+                }
+
+                return tabla;
+            }
 
 
 

@@ -97,6 +97,43 @@ inner join Cuenta_De_Banco B on R.Banco_ID = B.ID_Banco
 
 GO
 ------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+CREATE PROCEDURE SP_REPORTE_NOMINA
+AS
+
+select
+C.Nombre_Concepto AS [CONCEPTO],
+D.Nombre_Departamento AS [DEPARTAMENTO],
+year(EC.Fecha) AS [AÑO],
+month(EC.Fecha) AS [MES],
+null AS [SUELDO BRUTO],
+null AS [SUELDO NETO]
+
+From Concepto C
+inner join EmpleadoConceptos EC on EC.Concepto_ID = C.ID_Concepto
+inner join Empleado E on EC.Empleado_ID = E.ID_Empleado
+inner join Departamento D on E.Departamento_ID = D.ID_Departamento
+
+
+GO
+
+
+insert into EmpleadoConceptos
+values(1,1,getdate())
+
+------------------------------------------------------------------------------------------------------------------
+CREATE PROCEDURE SP_REPORTE_GENERAL
+AS
+
+GO
+------------------------------------------------------------------------------------------------------------------
+CREATE PROCEDURE SP_REPORTE_HEADCOUNTER
+AS
+
+GO
+
+
+
 
 select * from Empleado E
 inner join Puesto P on E.Puesto_ID = P.ID_Puesto

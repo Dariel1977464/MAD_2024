@@ -77,7 +77,8 @@ create table EmpleadoConceptos
 (
 ID_EmpleadoConceptos	int IDENTITY(1, 1) primary key,
 Empleado_ID				int,
-Concepto_ID				int
+Concepto_ID				int,
+Fecha					date
 );
 -------------------------------------------------------------------------------------------------------------------------
 create table ReciboDeNomina(

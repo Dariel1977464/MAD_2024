@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|d:\\clays\\documents\\mad_2024\\mad2024\\pantallas\\empleados_capturar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|solutionrelative:pantallas\\empleados_capturar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|d:\\clays\\documents\\mad_2024\\mad2024\\pantallas\\nomina\\nomina_reporte_general.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|solutionrelative:pantallas\\nomina\\nomina_reporte_general.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|d:\\clays\\documents\\mad_2024\\mad2024\\pantallas\\empleados_catalogo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|solutionrelative:pantallas\\empleados_catalogo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|d:\\clays\\documents\\mad_2024\\mad2024\\pantallas\\nomina\\nomina_headcounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|solutionrelative:pantallas\\nomina\\nomina_headcounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|d:\\clays\\documents\\mad_2024\\mad2024\\pantallas\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|solutionrelative:pantallas\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|d:\\clays\\documents\\mad_2024\\mad2024\\pantallas\\nomina\\nomina_headcounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|solutionrelative:pantallas\\nomina\\nomina_headcounter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|d:\\clays\\documents\\mad_2024\\mad2024\\enlacedb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|solutionrelative:enlacedb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,43 +26,57 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "EMPLEADOS_catalogo.cs [Design]",
-              "DocumentMoniker": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\Pantallas\\EMPLEADOS_catalogo.cs",
-              "RelativeDocumentMoniker": "Pantallas\\EMPLEADOS_catalogo.cs",
-              "ToolTip": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\Pantallas\\EMPLEADOS_catalogo.cs [Design]",
-              "RelativeToolTip": "Pantallas\\EMPLEADOS_catalogo.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T08:08:50.963Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "EMPLEADOS_capturar.cs [Design]",
-              "DocumentMoniker": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\Pantallas\\EMPLEADOS_capturar.cs",
-              "RelativeDocumentMoniker": "Pantallas\\EMPLEADOS_capturar.cs",
-              "ToolTip": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\Pantallas\\EMPLEADOS_capturar.cs [Design]",
-              "RelativeToolTip": "Pantallas\\EMPLEADOS_capturar.cs [Design]",
+              "Title": "NOMINA_Reporte_General.cs",
+              "DocumentMoniker": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\Pantallas\\NOMINA\\NOMINA_Reporte_General.cs",
+              "RelativeDocumentMoniker": "Pantallas\\NOMINA\\NOMINA_Reporte_General.cs",
+              "ToolTip": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\Pantallas\\NOMINA\\NOMINA_Reporte_General.cs",
+              "RelativeToolTip": "Pantallas\\NOMINA\\NOMINA_Reporte_General.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAIAxwBkAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T08:08:30.653Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-12T05:44:50.377Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\Pantallas\\Form1.cs",
-              "RelativeDocumentMoniker": "Pantallas\\Form1.cs",
-              "ToolTip": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\Pantallas\\Form1.cs",
-              "RelativeToolTip": "Pantallas\\Form1.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAIAxwDQAAAAOAAAAAAAAAA==",
+              "Title": "NOMINA_HEADCOUNTER.cs [Design]",
+              "DocumentMoniker": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\Pantallas\\NOMINA\\NOMINA_HEADCOUNTER.cs",
+              "RelativeDocumentMoniker": "Pantallas\\NOMINA\\NOMINA_HEADCOUNTER.cs",
+              "ToolTip": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\Pantallas\\NOMINA\\NOMINA_HEADCOUNTER.cs [Design]",
+              "RelativeToolTip": "Pantallas\\NOMINA\\NOMINA_HEADCOUNTER.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T08:05:00.548Z",
+              "WhenOpened": "2025-05-12T05:43:56.867Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NOMINA_HEADCOUNTER.cs",
+              "DocumentMoniker": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\Pantallas\\NOMINA\\NOMINA_HEADCOUNTER.cs",
+              "RelativeDocumentMoniker": "Pantallas\\NOMINA\\NOMINA_HEADCOUNTER.cs",
+              "ToolTip": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\Pantallas\\NOMINA\\NOMINA_HEADCOUNTER.cs",
+              "RelativeToolTip": "Pantallas\\NOMINA\\NOMINA_HEADCOUNTER.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAEwBYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T05:41:10.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EnlaceDB.cs",
+              "DocumentMoniker": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\EnlaceDB.cs",
+              "RelativeDocumentMoniker": "EnlaceDB.cs",
+              "ToolTip": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\EnlaceDB.cs",
+              "RelativeToolTip": "EnlaceDB.cs",
+              "ViewState": "AgIAAJ0BAAAAAAAAAAA5wFECAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T05:32:35.81Z",
               "EditorCaption": ""
             }
           ]

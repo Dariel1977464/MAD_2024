@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApplication1;
 
 namespace MAD2024Prueba.Pantallas
 {
@@ -15,6 +16,15 @@ namespace MAD2024Prueba.Pantallas
         public NOMINA_Reportes()
         {
             InitializeComponent();
+        }
+        private void NOMINA_Reportes_Load(object sender, EventArgs e)
+        {
+            var conex = new EnlaceDB();
+            var tblAlumnos = new DataTable();
+
+            tblAlumnos = conex.IMPRIMIR_REPORTE_NOMINA();
+
+            dataGridView2.DataSource = tblAlumnos;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -31,5 +41,12 @@ namespace MAD2024Prueba.Pantallas
         {
             Close();
         }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        
     }
 }

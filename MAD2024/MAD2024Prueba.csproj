@@ -65,40 +65,40 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EnlaceDB.cs" />
-    <Compile Include="Pantallas\CONCEPTOS_capturar.cs">
+    <Compile Include="Pantallas\CONCEPTOS\CONCEPTOS_capturar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\CONCEPTOS_capturar.Designer.cs">
+    <Compile Include="Pantallas\CONCEPTOS\CONCEPTOS_capturar.Designer.cs">
       <DependentUpon>CONCEPTOS_capturar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\CONCEPTOS_catalogo.cs">
+    <Compile Include="Pantallas\CONCEPTOS\CONCEPTOS_catalogo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\CONCEPTOS_catalogo.Designer.cs">
+    <Compile Include="Pantallas\CONCEPTOS\CONCEPTOS_catalogo.Designer.cs">
       <DependentUpon>CONCEPTOS_catalogo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\DEPARTAMENTOS_capturar.cs">
+    <Compile Include="Pantallas\DEPARTAMENTOS\DEPARTAMENTOS_capturar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\DEPARTAMENTOS_capturar.Designer.cs">
+    <Compile Include="Pantallas\DEPARTAMENTOS\DEPARTAMENTOS_capturar.Designer.cs">
       <DependentUpon>DEPARTAMENTOS_capturar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\DEPARTAMENTOS_catalogo.cs">
+    <Compile Include="Pantallas\DEPARTAMENTOS\DEPARTAMENTOS_catalogo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\DEPARTAMENTOS_catalogo.Designer.cs">
+    <Compile Include="Pantallas\DEPARTAMENTOS\DEPARTAMENTOS_catalogo.Designer.cs">
       <DependentUpon>DEPARTAMENTOS_catalogo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\EMPLEADOS_capturar.cs">
+    <Compile Include="Pantallas\EMPLEADOS\EMPLEADOS_capturar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\EMPLEADOS_capturar.Designer.cs">
+    <Compile Include="Pantallas\EMPLEADOS\EMPLEADOS_capturar.Designer.cs">
       <DependentUpon>EMPLEADOS_capturar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\EMPLEADOS_catalogo.cs">
+    <Compile Include="Pantallas\EMPLEADOS\EMPLEADOS_catalogo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\EMPLEADOS_catalogo.Designer.cs">
+    <Compile Include="Pantallas\EMPLEADOS\EMPLEADOS_catalogo.Designer.cs">
       <DependentUpon>EMPLEADOS_catalogo.cs</DependentUpon>
     </Compile>
     <Compile Include="Pantallas\Form1.cs">
@@ -119,60 +119,60 @@
     <Compile Include="Pantallas\MENU_Main.Designer.cs">
       <DependentUpon>MENU_Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\NOMINA_CALCULAR.cs">
+    <Compile Include="Pantallas\NOMINA\NOMINA_CALCULAR.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\NOMINA_CALCULAR.Designer.cs">
+    <Compile Include="Pantallas\NOMINA\NOMINA_CALCULAR.Designer.cs">
       <DependentUpon>NOMINA_CALCULAR.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\NOMINA_HEADCOUNTER.cs">
+    <Compile Include="Pantallas\NOMINA\NOMINA_HEADCOUNTER.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\NOMINA_HEADCOUNTER.Designer.cs">
+    <Compile Include="Pantallas\NOMINA\NOMINA_HEADCOUNTER.Designer.cs">
       <DependentUpon>NOMINA_HEADCOUNTER.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\NOMINA_Reportes.cs">
+    <Compile Include="Pantallas\NOMINA\NOMINA_Reportes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\NOMINA_Reportes.Designer.cs">
+    <Compile Include="Pantallas\NOMINA\NOMINA_Reportes.Designer.cs">
       <DependentUpon>NOMINA_Reportes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\NOMINA_Reporte_General.cs">
+    <Compile Include="Pantallas\NOMINA\NOMINA_Reporte_General.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\NOMINA_Reporte_General.Designer.cs">
+    <Compile Include="Pantallas\NOMINA\NOMINA_Reporte_General.Designer.cs">
       <DependentUpon>NOMINA_Reporte_General.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\PUESTOS_capturar.cs">
+    <Compile Include="Pantallas\PUESTOS\PUESTOS_capturar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\PUESTOS_capturar.Designer.cs">
+    <Compile Include="Pantallas\PUESTOS\PUESTOS_capturar.Designer.cs">
       <DependentUpon>PUESTOS_capturar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\PUESTOS_catalogo.cs">
+    <Compile Include="Pantallas\PUESTOS\PUESTOS_catalogo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\PUESTOS_catalogo.Designer.cs">
+    <Compile Include="Pantallas\PUESTOS\PUESTOS_catalogo.Designer.cs">
       <DependentUpon>PUESTOS_catalogo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Pantallas\CONCEPTOS_capturar.resx">
+    <EmbeddedResource Include="Pantallas\CONCEPTOS\CONCEPTOS_capturar.resx">
       <DependentUpon>CONCEPTOS_capturar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\CONCEPTOS_catalogo.resx">
+    <EmbeddedResource Include="Pantallas\CONCEPTOS\CONCEPTOS_catalogo.resx">
       <DependentUpon>CONCEPTOS_catalogo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\DEPARTAMENTOS_capturar.resx">
+    <EmbeddedResource Include="Pantallas\DEPARTAMENTOS\DEPARTAMENTOS_capturar.resx">
       <DependentUpon>DEPARTAMENTOS_capturar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\DEPARTAMENTOS_catalogo.resx">
+    <EmbeddedResource Include="Pantallas\DEPARTAMENTOS\DEPARTAMENTOS_catalogo.resx">
       <DependentUpon>DEPARTAMENTOS_catalogo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\EMPLEADOS_capturar.resx">
+    <EmbeddedResource Include="Pantallas\EMPLEADOS\EMPLEADOS_capturar.resx">
       <DependentUpon>EMPLEADOS_capturar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\EMPLEADOS_catalogo.resx">
+    <EmbeddedResource Include="Pantallas\EMPLEADOS\EMPLEADOS_catalogo.resx">
       <DependentUpon>EMPLEADOS_catalogo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\Form1.resx">
@@ -184,22 +184,22 @@
     <EmbeddedResource Include="Pantallas\MENU_Main.resx">
       <DependentUpon>MENU_Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\NOMINA_CALCULAR.resx">
+    <EmbeddedResource Include="Pantallas\NOMINA\NOMINA_CALCULAR.resx">
       <DependentUpon>NOMINA_CALCULAR.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\NOMINA_HEADCOUNTER.resx">
+    <EmbeddedResource Include="Pantallas\NOMINA\NOMINA_HEADCOUNTER.resx">
       <DependentUpon>NOMINA_HEADCOUNTER.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\NOMINA_Reportes.resx">
+    <EmbeddedResource Include="Pantallas\NOMINA\NOMINA_Reportes.resx">
       <DependentUpon>NOMINA_Reportes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\NOMINA_Reporte_General.resx">
+    <EmbeddedResource Include="Pantallas\NOMINA\NOMINA_Reporte_General.resx">
       <DependentUpon>NOMINA_Reporte_General.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\PUESTOS_capturar.resx">
+    <EmbeddedResource Include="Pantallas\PUESTOS\PUESTOS_capturar.resx">
       <DependentUpon>PUESTOS_capturar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\PUESTOS_catalogo.resx">
+    <EmbeddedResource Include="Pantallas\PUESTOS\PUESTOS_catalogo.resx">
       <DependentUpon>PUESTOS_catalogo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

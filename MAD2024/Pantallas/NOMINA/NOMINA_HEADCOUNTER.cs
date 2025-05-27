@@ -11,6 +11,7 @@ using WindowsFormsApplication1;
 
 namespace MAD2024Prueba.Pantallas
 {
+
     public partial class NOMINA_HEADCOUNTER : Form
     {
         public NOMINA_HEADCOUNTER()
@@ -29,6 +30,19 @@ namespace MAD2024Prueba.Pantallas
 
             dataGridView1.DataSource = tblAlumnos;
             dataGridView2.DataSource = tblAlumnos2;
+
+
+
+                //comboBox1.DisplayMember = "Name";
+                //comboBox1.ValueMember = "Id";
+                //
+                //comboBox1.Items.Add(new Item("Student 1", 1));
+                //comboBox1.Items.Add(new Item("Student 2", 2));
+                //comboBox1.Items.Add(new Item("Student 3", 3));
+
+
+
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -46,6 +60,9 @@ namespace MAD2024Prueba.Pantallas
 
         }
 
-        
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

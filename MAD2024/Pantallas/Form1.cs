@@ -21,7 +21,7 @@ namespace MAD2024Prueba
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Size = new Size(670, 250);
+            //Size = new Size(670, 250);
 
             var conex = new EnlaceDB();
             var tblAlumnos = new DataTable();
@@ -31,7 +31,8 @@ namespace MAD2024Prueba
 
             tblAlumnos = conex.ListaAlumnos(6);
 
-            
+            textBox3.Text = "UsuarioDariel";
+            textBox1.Text = "Contraseña123";
 
             //tblAlumnos = conex.ListaAlumnos
 
@@ -67,6 +68,16 @@ namespace MAD2024Prueba
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

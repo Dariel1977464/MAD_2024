@@ -61,6 +61,12 @@
           <AssociatedConnUserName>ClayserUsuarioPrueba</AssociatedConnUserName>
           <FullPath>tarea_tablas.sql</FullPath>
         </FileNode>
+        <FileNode Name="Temporal_Diccionario.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-20ALCHGK\SQLEXPRESS:False:ClayserUsuarioPrueba</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-20ALCHGK\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName>ClayserUsuarioPrueba</AssociatedConnUserName>
+          <FullPath>Temporal_Diccionario.sql</FullPath>
+        </FileNode>
         <FileNode Name="Temporal_Funciones.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-20ALCHGK\SQLEXPRESS:False:ClayserUsuarioPrueba</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>LAPTOP-20ALCHGK\SQLEXPRESS</AssociatedConnSrvName>
@@ -84,6 +90,18 @@
           <AssociatedConnSrvName>LAPTOP-20ALCHGK\SQLEXPRESS</AssociatedConnSrvName>
           <AssociatedConnUserName>ClayserUsuarioPrueba</AssociatedConnUserName>
           <FullPath>Temporal_Tablas.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Temporal_Triggers.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-20ALCHGK\SQLEXPRESS:False:ClayserUsuarioPrueba</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-20ALCHGK\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName>ClayserUsuarioPrueba</AssociatedConnUserName>
+          <FullPath>Temporal_Triggers.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Temporal_Vistas.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-20ALCHGK\SQLEXPRESS:False:ClayserUsuarioPrueba</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-20ALCHGK\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName>ClayserUsuarioPrueba</AssociatedConnUserName>
+          <FullPath>Temporal_Vistas.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>

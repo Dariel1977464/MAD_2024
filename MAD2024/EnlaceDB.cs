@@ -69,349 +69,413 @@ namespace WindowsFormsApplication1
         }
 
         #region SP_PRUEBAS
-            public bool Autentificar(string us, string ps)
+
+        public bool Autentificar(string us, string ps)
+        {
+            bool isValid = false;
+            try
             {
-                bool isValid = false;
-                try
+                conectar();
+                string qry = "SP_ValidaUser";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandTimeout = 9000;
+
+                var parametro1 = _comandosql.Parameters.Add("@u", SqlDbType.Char, 20);
+                parametro1.Value = us;
+                var parametro2 = _comandosql.Parameters.Add("@p", SqlDbType.Char, 20);
+                parametro2.Value = ps;
+
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(_tabla);
+
+                if (_tabla.Rows.Count > 0)
                 {
-                    conectar();
-                    string qry = "SP_ValidaUser";
-                    _comandosql = new SqlCommand(qry, _conexion);
-                    _comandosql.CommandType = CommandType.StoredProcedure;
-                    _comandosql.CommandTimeout = 9000;
-
-                    var parametro1 = _comandosql.Parameters.Add("@u", SqlDbType.Char, 20);
-                    parametro1.Value = us;
-                    var parametro2 = _comandosql.Parameters.Add("@p", SqlDbType.Char, 20);
-                    parametro2.Value = ps;
-
-                    _adaptador.SelectCommand = _comandosql;
-                    _adaptador.Fill(_tabla);
-
-                    if (_tabla.Rows.Count > 0)
-                    {
-                        isValid = true;
-                    }
-
-                }
-                catch (SqlException e)
-                {
-                    isValid = false;
-                }
-                finally
-                {
-                    desconectar();
+                    isValid = true;
                 }
 
-                return isValid;
+            }
+            catch (SqlException e)
+            {
+                isValid = false;
+            }
+            finally
+            {
+                desconectar();
             }
 
-            public DataTable get_Users()
+            return isValid;
+        }
+
+        public DataTable get_Users()
+        {
+            var msg = "";
+            DataTable tabla = new DataTable();
+            try
             {
-                var msg = "";
-                DataTable tabla = new DataTable();
-                try
-                {
-                    conectar();
-                    // Ejemplo de cómo ejecutar un query, 
-                    // PERO lo correcto es siempre usar SP para cualquier consulta a la base de datos
-                    string qry = "Select Nombre, email, Fecha_modif from Usuarios where Activo = 0;";
-                    _comandosql = new SqlCommand(qry, _conexion);
-                    _comandosql.CommandType = CommandType.Text;
-                    // Esta opción solo la podrían utilizar si hacen un EXEC al SP concatenando los parámetros.
-                    _comandosql.CommandTimeout = 1200;
+                conectar();
+                // Ejemplo de cómo ejecutar un query, 
+                // PERO lo correcto es siempre usar SP para cualquier consulta a la base de datos
+                string qry = "Select Nombre, email, Fecha_modif from Usuarios where Activo = 0;";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.Text;
+                // Esta opción solo la podrían utilizar si hacen un EXEC al SP concatenando los parámetros.
+                _comandosql.CommandTimeout = 1200;
 
-                    _adaptador.SelectCommand = _comandosql;
-                    _adaptador.Fill(tabla);
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(tabla);
 
-                }
-                catch (SqlException e)
-                {
-                    msg = "Excepción de base de datos: \n";
-                    msg += e.Message;
-                    MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                }
-                finally
-                {
-                    desconectar();
-                }
-
-                return tabla;
+            }
+            catch (SqlException e)
+            {
+                msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
             }
 
-            // Ejemplo de método para recibir una consulta en forma de tabla
-            // Cuando el SP ejecutará un SELECT
-            public DataTable get_Deptos(string opc)
+            return tabla;
+        }
+
+        // Ejemplo de método para recibir una consulta en forma de tabla
+        // Cuando el SP ejecutará un SELECT
+        public DataTable get_Deptos(string opc)
+        {
+            var msg = "";
+            DataTable tabla = new DataTable();
+            try
             {
-                var msg = "";
-                DataTable tabla = new DataTable();
-                try
-                {
-                    conectar();
-                    string qry = "sp_Gestiona_Deptos";
-                    _comandosql = new SqlCommand(qry, _conexion);
-                    _comandosql.CommandType = CommandType.StoredProcedure;
-                    _comandosql.CommandTimeout = 1200;
+                conectar();
+                string qry = "sp_Gestiona_Deptos";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandTimeout = 1200;
 
-                    var parametro1 = _comandosql.Parameters.Add("@Opc", SqlDbType.Char, 1);
-                    parametro1.Value = opc;
+                var parametro1 = _comandosql.Parameters.Add("@Opc", SqlDbType.Char, 1);
+                parametro1.Value = opc;
 
 
-                    _adaptador.SelectCommand = _comandosql;
-                    _adaptador.Fill(tabla);
-                    // la ejecución del SP espera que regrese datos en formato tabla
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(tabla);
+                // la ejecución del SP espera que regrese datos en formato tabla
 
-                }
-                catch (SqlException e)
-                {
-                    msg = "Excepción de base de datos: \n";
-                    msg += e.Message;
-                    MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                }
-                finally
-                {
-                    desconectar();
-                }
-
-                return tabla;
+            }
+            catch (SqlException e)
+            {
+                msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
             }
 
-            // Ejemplo de método para ejecutar un SP que no se espera que regrese información, 
-            // solo que ejecute ya sea un INSERT, UPDATE o DELETE
-            public bool Add_Deptos(string opc, string depto)
+            return tabla;
+        }
+
+        // Ejemplo de método para ejecutar un SP que no se espera que regrese información, 
+        // solo que ejecute ya sea un INSERT, UPDATE o DELETE
+        public bool Add_Deptos(string opc, string depto)
+        {
+            var msg = "";
+            var add = true;
+            try
             {
-                var msg = "";
-                var add = true;
-                try
-                {
-                    conectar();
-                    string qry = "sp_Gestiona_Deptos";
-                    _comandosql = new SqlCommand(qry, _conexion);
-                    _comandosql.CommandType = CommandType.StoredProcedure;
-                    _comandosql.CommandTimeout = 1200;
+                conectar();
+                string qry = "sp_Gestiona_Deptos";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandTimeout = 1200;
 
-                    var parametro1 = _comandosql.Parameters.Add("@Opc", SqlDbType.Char, 1);
-                    parametro1.Value = opc;
-                    var parametro2 = _comandosql.Parameters.Add("@Nombre", SqlDbType.VarChar, 20);
-                    parametro2.Value = depto;
+                var parametro1 = _comandosql.Parameters.Add("@Opc", SqlDbType.Char, 1);
 
-                    _adaptador.InsertCommand = _comandosql;
-                    // También se tienen las propiedades del adaptador: UpdateCommand  y DeleteCommand
+                //parametro1 = _comandosql.Parameters.get("@Opc", SqlDbType.Char, 1);
 
-                    _comandosql.ExecuteNonQuery();
 
-                }
-                catch (SqlException e)
-                {
-                    add = false;
-                    msg = "Excepción de base de datos: \n";
-                    msg += e.Message;
-                    MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                }
-                finally
-                {
-                    desconectar();
-                }
+                parametro1.Value = opc;
+                var parametro2 = _comandosql.Parameters.Add("@Nombre", SqlDbType.VarChar, 20);
+                parametro2.Value = depto;
 
-                return add;
+
+
+
+
+                // @ReturnVal could be any name
+                var returnParameter = _comandosql.Parameters.Add("@ReturnVal", SqlDbType.Int);
+                returnParameter.Direction = ParameterDirection.ReturnValue;
+
+                //conn.Open();
+                //_comandosql.ExecuteNonQuery();
+                var result = parametro2.Value;
+
+
+
+
+
+
+                _adaptador.InsertCommand = _comandosql;
+                // También se tienen las propiedades del adaptador: UpdateCommand  y DeleteCommand
+
+                _comandosql.ExecuteNonQuery();
+
+                //var result = parametro2.Value;
+
+
+            }
+            catch (SqlException e)
+            {
+                add = false;
+                msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
             }
 
-            public bool Agregar_Carreras(string product_name, string locations, string category, string plan, string coord)
+            return add;
+        }
+
+        public bool Agregar_Carreras(string product_name, string locations, string category, string plan, string coord)
+        {
+            var msg = "";
+            var add = true;
+            try
             {
-                var msg = "";
-                var add = true;
-                try
-                {
-                    conectar();
-                    string qry = "sp_HacerPrueba";
-                    _comandosql = new SqlCommand(qry, _conexion);
-                    _comandosql.CommandType = CommandType.StoredProcedure;
-                    _comandosql.CommandTimeout = 1200;
+                conectar();
+                string qry = "sp_HacerPrueba";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandTimeout = 1200;
 
-                    //var parametro1 = _comandosql.Parameters.Add("@product_name", SqlDbType.Char, 1);
-                    //parametro1.Value = product_name;
-                    //var parametro2 = _comandosql.Parameters.Add("@locations", SqlDbType.VarChar, 5);
-                    //parametro2.Value = locations;
-                    //var parametro3 = _comandosql.Parameters.Add("@category", SqlDbType.VarChar, 30);
-                    //parametro3.Value = category;
+                //var parametro1 = _comandosql.Parameters.Add("@product_name", SqlDbType.Char, 1);
+                //parametro1.Value = product_name;
+                //var parametro2 = _comandosql.Parameters.Add("@locations", SqlDbType.VarChar, 5);
+                //parametro2.Value = locations;
+                //var parametro3 = _comandosql.Parameters.Add("@category", SqlDbType.VarChar, 30);
+                //parametro3.Value = category;
 
 
 
-                    //var parametro4 = _comandosql.Parameters.Add("@PlanCarr", SqlDbType.VarChar, 10);
-                    //parametro4.Value = plan;
-                    //var parametro5 = _comandosql.Parameters.Add("@Coordinador", SqlDbType.VarChar, 30);
-                    //parametro5.Value = coord;
+                //var parametro4 = _comandosql.Parameters.Add("@PlanCarr", SqlDbType.VarChar, 10);
+                //parametro4.Value = plan;
+                //var parametro5 = _comandosql.Parameters.Add("@Coordinador", SqlDbType.VarChar, 30);
+                //parametro5.Value = coord;
 
-                    //_adaptador.InsertCommand = _comandosql;
-                    //// También se tienen las propiedades del adaptador: UpdateCommand  y DeleteCommand
+                //_adaptador.InsertCommand = _comandosql;
+                //// También se tienen las propiedades del adaptador: UpdateCommand  y DeleteCommand
 
-                    //_comandosql.ExecuteNonQuery();
+                //_comandosql.ExecuteNonQuery();
 
-                }
-                catch (SqlException e)
-                {
-                    add = false;
-                    msg = "Excepción de base de datos: \n";
-                    msg += e.Message;
-                    MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                }
-                finally
-                {
-                    desconectar();
-                }
-
-                return add;
+            }
+            catch (SqlException e)
+            {
+                add = false;
+                msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
             }
 
-            public DataTable ListaAlumnos(int opc)
+            return add;
+        }
+
+        public DataTable ListaAlumnos(int opc)
+        {
+            var msg = "";
+            DataTable tabla = new DataTable();
+            try
             {
-                var msg = "";
-                DataTable tabla = new DataTable();
-                try
-                {
-                    conectar();
-                    string qry = "sp_HacerPrueba";
-                    //string qry = "DBsp_BancoLLenar";
-                    _comandosql = new SqlCommand(qry, _conexion);
-                    _comandosql.CommandType = CommandType.StoredProcedure;
-                    _comandosql.CommandTimeout = 1200;
+                conectar();
+                string qry = "sp_HacerPrueba";
+                //string qry = "DBsp_BancoLLenar";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandTimeout = 1200;
 
-                    //var parametro1 = _comandosql.Parameters.Add("@Opc", SqlDbType.Int, 4);
-                    //parametro1.Value = opc;
+                //var parametro1 = _comandosql.Parameters.Add("@Opc", SqlDbType.Int, 4);
+                //parametro1.Value = opc;
 
 
-                    _adaptador.SelectCommand = _comandosql;
-                    _adaptador.Fill(tabla);
-                    // la ejecución del SP espera que regrese datos en formato tabla
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(tabla);
+                // la ejecución del SP espera que regrese datos en formato tabla
 
-                }
-                catch (SqlException e)
-                {
-                    msg = "Excepción de base de datos: \n";
-                    msg += e.Message;
-                    MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                }
-                finally
-                {
-                    desconectar();
-                }
-
-                return tabla;
             }
+            catch (SqlException e)
+            {
+                msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            return tabla;
+        }
 
         #endregion
 
         #region SP_IMPRIMIR
 
-            public DataTable IMPRIMIR_DEPARTAMENTO()
+        public DataTable IMPRIMIR_DEPARTAMENTO()
+        {
+            var msg = "";
+            DataTable tabla = new DataTable();
+            try
             {
-                var msg = "";
-                DataTable tabla = new DataTable();
-                try
-                {
-                    conectar();
-                    string qry = "SP_IMPRIMIR_DEPARTAMENTO";
-                    //string qry = "DBsp_BancoLLenar";
-                    _comandosql = new SqlCommand(qry, _conexion);
-                    _comandosql.CommandType = CommandType.StoredProcedure;
-                    _comandosql.CommandTimeout = 1200;
+                conectar();
+                string qry = "SP_IMPRIMIR_DEPARTAMENTO";
+                //string qry = "DBsp_BancoLLenar";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandTimeout = 1200;
 
-                    //var parametro1 = _comandosql.Parameters.Add("@Opc", SqlDbType.Int, 4);
-                    //parametro1.Value = opc;
+                //var parametro1 = _comandosql.Parameters.Add("@Opc", SqlDbType.Int, 4);
+                //parametro1.Value = opc;
 
 
-                    _adaptador.SelectCommand = _comandosql;
-                    _adaptador.Fill(tabla);
-                    // la ejecución del SP espera que regrese datos en formato tabla
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(tabla);
+                // la ejecución del SP espera que regrese datos en formato tabla
 
-                }
-                catch (SqlException e)
-                {
-                    msg = "Excepción de base de datos: \n";
-                    msg += e.Message;
-                    MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                }
-                finally
-                {
-                    desconectar();
-                }
-
-                return tabla;
+            }
+            catch (SqlException e)
+            {
+                msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
             }
 
-            public DataTable IMPRIMIR_PUESTO()
+            return tabla;
+        }
+
+        public DataTable IMPRIMIR_PUESTO()
+        {
+            var msg = "";
+            DataTable tabla = new DataTable();
+            try
             {
-                var msg = "";
-                DataTable tabla = new DataTable();
-                try
-                {
-                    conectar();
-                    string qry = "SP_IMPRIMIR_PUESTO";
-                    //string qry = "DBsp_BancoLLenar";
-                    _comandosql = new SqlCommand(qry, _conexion);
-                    _comandosql.CommandType = CommandType.StoredProcedure;
-                    _comandosql.CommandTimeout = 1200;
+                conectar();
+                string qry = "SP_IMPRIMIR_PUESTO";
+                //string qry = "DBsp_BancoLLenar";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandTimeout = 1200;
 
-                    //var parametro1 = _comandosql.Parameters.Add("@Opc", SqlDbType.Int, 4);
-                    //parametro1.Value = opc;
+                //var parametro1 = _comandosql.Parameters.Add("@Opc", SqlDbType.Int, 4);
+                //parametro1.Value = opc;
 
 
-                    _adaptador.SelectCommand = _comandosql;
-                    _adaptador.Fill(tabla);
-                    // la ejecución del SP espera que regrese datos en formato tabla
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(tabla);
+                // la ejecución del SP espera que regrese datos en formato tabla
 
-                }
-                catch (SqlException e)
-                {
-                    msg = "Excepción de base de datos: \n";
-                    msg += e.Message;
-                    MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                }
-                finally
-                {
-                    desconectar();
-                }
-
-                return tabla;
+            }
+            catch (SqlException e)
+            {
+                msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
             }
 
-            public DataTable IMPRIMIR_EMPLEADO()
+            return tabla;
+        }
+
+        public DataTable IMPRIMIR_EMPLEADO()
+        {
+            var msg = "";
+            DataTable tabla = new DataTable();
+            try
             {
-                var msg = "";
-                DataTable tabla = new DataTable();
-                try
-                {
-                    conectar();
-                    string qry = "SP_IMPRIMIR_EMPLEADO";
-                    //string qry = "DBsp_BancoLLenar";
-                    _comandosql = new SqlCommand(qry, _conexion);
-                    _comandosql.CommandType = CommandType.StoredProcedure;
-                    _comandosql.CommandTimeout = 1200;
+                conectar();
+                string qry = "SP_IMPRIMIR_EMPLEADO";
+                //string qry = "DBsp_BancoLLenar";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandTimeout = 1200;
 
-                    //var parametro1 = _comandosql.Parameters.Add("@Opc", SqlDbType.Int, 4);
-                    //parametro1.Value = opc;
+                //var parametro1 = _comandosql.Parameters.Add("@Opc", SqlDbType.Int, 4);
+                //parametro1.Value = opc;
 
 
-                    _adaptador.SelectCommand = _comandosql;
-                    _adaptador.Fill(tabla);
-                    // la ejecución del SP espera que regrese datos en formato tabla
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(tabla);
+                // la ejecución del SP espera que regrese datos en formato tabla
 
-                }
-                catch (SqlException e)
-                {
-                    msg = "Excepción de base de datos: \n";
-                    msg += e.Message;
-                    MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                }
-                finally
-                {
-                    desconectar();
-                }
-
-                return tabla;
+            }
+            catch (SqlException e)
+            {
+                msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
             }
 
-            public DataTable IMPRIMIR_CONCEPTO()
+            return tabla;
+        }
+
+        public DataTable IMPRIMIR_EMPLEADO_1(int EMPLEADO_ID)
+        {
+            var msg = "";
+            DataTable tabla = new DataTable();
+            try
+            {
+                conectar();
+                string qry = "SP_IMPRIMIR_EMPLEADO_1";
+                //string qry = "DBsp_BancoLLenar";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandTimeout = 1200;
+
+                var parametro1 = _comandosql.Parameters.Add("@Empleado", SqlDbType.Int, 1);
+                parametro1.Value = EMPLEADO_ID;
+
+
+
+
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(tabla);
+                // la ejecución del SP espera que regrese datos en formato tabla
+
+            }
+            catch (SqlException e)
+            {
+                msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            return tabla;
+        }
+
+
+        public DataTable IMPRIMIR_CONCEPTO()
             {
                 var msg = "";
                 DataTable tabla = new DataTable();
@@ -447,43 +511,78 @@ namespace WindowsFormsApplication1
                 return tabla;
             }
 
-            public DataTable IMPRIMIR_RECIBO()
+        public DataTable IMPRIMIR_RECIBO()
+        {
+            var msg = "";
+            DataTable tabla = new DataTable();
+            try
             {
-                var msg = "";
-                DataTable tabla = new DataTable();
-                try
-                {
-                    conectar();
-                    string qry = "SP_IMPRIMIR_RECIBO";
-                    //string qry = "DBsp_BancoLLenar";
-                    _comandosql = new SqlCommand(qry, _conexion);
-                    _comandosql.CommandType = CommandType.StoredProcedure;
-                    _comandosql.CommandTimeout = 1200;
+                conectar();
+                string qry = "SP_IMPRIMIR_RECIBO";
+                //string qry = "DBsp_BancoLLenar";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandTimeout = 1200;
 
-                    //var parametro1 = _comandosql.Parameters.Add("@Opc", SqlDbType.Int, 4);
-                    //parametro1.Value = opc;
+                //var parametro1 = _comandosql.Parameters.Add("@Opc", SqlDbType.Int, 4);
+                //parametro1.Value = opc;
 
 
-                    _adaptador.SelectCommand = _comandosql;
-                    _adaptador.Fill(tabla);
-                    // la ejecución del SP espera que regrese datos en formato tabla
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(tabla);
+                // la ejecución del SP espera que regrese datos en formato tabla
 
-                }
-                catch (SqlException e)
-                {
-                    msg = "Excepción de base de datos: \n";
-                    msg += e.Message;
-                    MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                }
-                finally
-                {
-                    desconectar();
-                }
-
-                return tabla;
+            }
+            catch (SqlException e)
+            {
+                msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
             }
 
-            public DataTable IMPRIMIR_REPORTE_NOMINA()
+            return tabla;
+        }
+        public DataTable IMPRIMIR_RECIBO_1_EMPLEADO(int EMPLEADO_ID)
+        {
+            var msg = "";
+            DataTable tabla = new DataTable();
+            try
+            {
+                conectar();
+                string qry = "SP_IMPRIMIR_RECIBO_1_EMPLEADO";
+                //string qry = "DBsp_BancoLLenar";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandTimeout = 1200;
+
+                var parametro1 = _comandosql.Parameters.Add("@Empleado", SqlDbType.Int, 4);
+                parametro1.Value = EMPLEADO_ID;
+
+
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(tabla);
+                // la ejecución del SP espera que regrese datos en formato tabla
+
+            }
+            catch (SqlException e)
+            {
+                msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            return tabla;
+        }
+
+        public DataTable IMPRIMIR_REPORTE_NOMINA()
         {
             var msg = "";
             DataTable tabla = new DataTable();
@@ -519,113 +618,185 @@ namespace WindowsFormsApplication1
             return tabla;
         }
 
-            public DataTable IMPRIMIR_REPORTE_GENERAL()
+        public DataTable IMPRIMIR_REPORTE_GENERAL()
+        {
+            var msg = "";
+            DataTable tabla = new DataTable();
+            try
             {
-                var msg = "";
-                DataTable tabla = new DataTable();
-                try
-                {
-                    conectar();
-                    string qry = "SP_REPORTE_NOMINA";
-                    //string qry = "DBsp_BancoLLenar";
-                    _comandosql = new SqlCommand(qry, _conexion);
-                    _comandosql.CommandType = CommandType.StoredProcedure;
-                    _comandosql.CommandTimeout = 1200;
+                conectar();
+                string qry = "SP_REPORTE_GENERAL";
+                //string qry = "DBsp_BancoLLenar";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandTimeout = 1200;
 
-                    //var parametro1 = _comandosql.Parameters.Add("@Opc", SqlDbType.Int, 4);
-                    //parametro1.Value = opc;
+                //var parametro1 = _comandosql.Parameters.Add("@Opc", SqlDbType.Int, 4);
+                //parametro1.Value = opc;
 
 
-                    _adaptador.SelectCommand = _comandosql;
-                    _adaptador.Fill(tabla);
-                    // la ejecución del SP espera que regrese datos en formato tabla
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(tabla);
+                // la ejecución del SP espera que regrese datos en formato tabla
 
-                }
-                catch (SqlException e)
-                {
-                    msg = "Excepción de base de datos: \n";
-                    msg += e.Message;
-                    MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                }
-                finally
-                {
-                    desconectar();
-                }
-
-                return tabla;
+            }
+            catch (SqlException e)
+            {
+                msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
             }
 
-            public DataTable IMPRIMIR_REPORTE_HEADCOUNTER_1()
+            return tabla;
+        }
+
+        public DataTable IMPRIMIR_REPORTE_HEADCOUNTER_1()
+        {
+            var msg = "";
+            DataTable tabla = new DataTable();
+            try
             {
-                var msg = "";
-                DataTable tabla = new DataTable();
-                try
-                {
-                    conectar();
-                    string qry = "SP_REPORTE_NOMINA";
-                    //string qry = "DBsp_BancoLLenar";
-                    _comandosql = new SqlCommand(qry, _conexion);
-                    _comandosql.CommandType = CommandType.StoredProcedure;
-                    _comandosql.CommandTimeout = 1200;
+                conectar();
+                string qry = "SP_REPORTE_HEADCOUNTER_1";
+                //string qry = "DBsp_BancoLLenar";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandTimeout = 1200;
 
-                    //var parametro1 = _comandosql.Parameters.Add("@Opc", SqlDbType.Int, 4);
-                    //parametro1.Value = opc;
+                //var parametro1 = _comandosql.Parameters.Add("@Opc", SqlDbType.Int, 4);
+                //parametro1.Value = opc;
 
 
-                    _adaptador.SelectCommand = _comandosql;
-                    _adaptador.Fill(tabla);
-                    // la ejecución del SP espera que regrese datos en formato tabla
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(tabla);
+                // la ejecución del SP espera que regrese datos en formato tabla
 
-                }
-                catch (SqlException e)
-                {
-                    msg = "Excepción de base de datos: \n";
-                    msg += e.Message;
-                    MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                }
-                finally
-                {
-                    desconectar();
-                }
-
-                return tabla;
+            }
+            catch (SqlException e)
+            {
+                msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
             }
 
-            public DataTable IMPRIMIR_REPORTE_HEADCOUNTER_2()
+            return tabla;
+        }
+
+        public DataTable IMPRIMIR_REPORTE_HEADCOUNTER_2()
+        {
+            var msg = "";
+            DataTable tabla = new DataTable();
+            try
             {
-                var msg = "";
-                DataTable tabla = new DataTable();
-                try
-                {
-                    conectar();
-                    string qry = "SP_REPORTE_NOMINA";
-                    //string qry = "DBsp_BancoLLenar";
-                    _comandosql = new SqlCommand(qry, _conexion);
-                    _comandosql.CommandType = CommandType.StoredProcedure;
-                    _comandosql.CommandTimeout = 1200;
+                conectar();
+                string qry = "SP_REPORTE_HEADCOUNTER_2";
+                //string qry = "DBsp_BancoLLenar";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandTimeout = 1200;
 
-                    //var parametro1 = _comandosql.Parameters.Add("@Opc", SqlDbType.Int, 4);
-                    //parametro1.Value = opc;
+                //var parametro1 = _comandosql.Parameters.Add("@Opc", SqlDbType.Int, 4);
+                //parametro1.Value = opc;
 
 
-                    _adaptador.SelectCommand = _comandosql;
-                    _adaptador.Fill(tabla);
-                    // la ejecución del SP espera que regrese datos en formato tabla
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(tabla);
+                // la ejecución del SP espera que regrese datos en formato tabla
 
-                }
-                catch (SqlException e)
-                {
-                    msg = "Excepción de base de datos: \n";
-                    msg += e.Message;
-                    MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                }
-                finally
-                {
-                    desconectar();
-                }
-
-                return tabla;
             }
+            catch (SqlException e)
+            {
+                msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            return tabla;
+        }
+
+        public DataTable IMPRIMIR_EN_NOMINA_PERCEPCIONES(int EMPLEADO_ID)
+        {
+            var msg = "";
+            DataTable tabla = new DataTable();
+            try
+            {
+                conectar();
+                string qry = "sp_NominaRequisito_Percepciones";
+                //string qry = "DBsp_BancoLLenar";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandTimeout = 1200;
+
+                var parametro1 = _comandosql.Parameters.Add("@Empleado", SqlDbType.Int, 1);
+                parametro1.Value = EMPLEADO_ID;
+
+
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(tabla);
+                // la ejecución del SP espera que regrese datos en formato tabla
+
+            }
+            catch (SqlException e)
+            {
+                msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            return tabla;
+        }
+
+        public DataTable IMPRIMIR_EN_NOMINA_DEDUCCIONES(int EMPLEADO_ID)
+        {
+            var msg = "";
+            DataTable tabla = new DataTable();
+            try
+            {
+                conectar();
+                string qry = "sp_NominaRequisito_Deducciones";
+                //string qry = "DBsp_BancoLLenar";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandTimeout = 1200;
+
+                var parametro1 = _comandosql.Parameters.Add("@Empleado", SqlDbType.Int, 1);
+                parametro1.Value = EMPLEADO_ID;
+
+
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(tabla);
+                // la ejecución del SP espera que regrese datos en formato tabla
+
+            }
+            catch (SqlException e)
+            {
+                msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            return tabla;
+        }
 
 
 

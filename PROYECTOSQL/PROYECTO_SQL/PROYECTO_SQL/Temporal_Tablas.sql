@@ -70,7 +70,8 @@ Cuenta_BancoID		int,
 Empresa_ID			int,
 Puesto_ID			int,
 Departamento_ID		int,
-Direccion_ID		int
+Direccion_ID		int,
+FechaIngreso		date
 );
 -------------------------------------------------------------------------------------------------------------------------
 create table EmpleadoConceptos
@@ -84,10 +85,11 @@ Fecha					date
 create table ReciboDeNomina(
 ID_Recibo				int IDENTITY(1, 1) primary key,
 Fecha_Recibo			date,
+Cantidad_Bruta			money,
 Cantidad_Depositada		money,
 Empresa_ID				int,
 Empleado_ID				int,
 Banco_ID				int,
-GUID					varchar(30) 
+GUID					varchar(36) 
 );
 -------------------------------------------------------------------------------------------------------------------------

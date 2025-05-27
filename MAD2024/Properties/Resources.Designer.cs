@@ -63,9 +63,39 @@ namespace MAD2024Prueba.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Captura_de_pantalla_2025_05_22_170850 {
+            get {
+                object obj = ResourceManager.GetObject("Captura de pantalla 2025-05-22 170850", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap darielOS {
             get {
                 object obj = ResourceManager.GetObject("darielOS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RECIBO {
+            get {
+                object obj = ResourceManager.GetObject("RECIBO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RECIBO1 {
+            get {
+                object obj = ResourceManager.GetObject("RECIBO1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

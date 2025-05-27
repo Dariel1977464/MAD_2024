@@ -131,6 +131,12 @@
     <Compile Include="Pantallas\NOMINA\NOMINA_HEADCOUNTER.Designer.cs">
       <DependentUpon>NOMINA_HEADCOUNTER.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pantallas\NOMINA\NOMINA_RECIBO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\NOMINA\NOMINA_RECIBO.Designer.cs">
+      <DependentUpon>NOMINA_RECIBO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pantallas\NOMINA\NOMINA_Reportes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,9 @@
     <EmbeddedResource Include="Pantallas\NOMINA\NOMINA_HEADCOUNTER.resx">
       <DependentUpon>NOMINA_HEADCOUNTER.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\NOMINA\NOMINA_RECIBO.resx">
+      <DependentUpon>NOMINA_RECIBO.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\NOMINA\NOMINA_Reportes.resx">
       <DependentUpon>NOMINA_Reportes.cs</DependentUpon>
     </EmbeddedResource>
@@ -242,6 +251,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\darielOS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de pantalla 2025-05-22 170850.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RECIBO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RECIBO1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

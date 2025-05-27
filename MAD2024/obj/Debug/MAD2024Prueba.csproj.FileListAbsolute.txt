@@ -51,3 +51,4 @@ D:\clays\Documents\MAD_2024\MAD2024\obj\Debug\MAD2024Prueba.csproj.GenerateResou
 D:\clays\Documents\MAD_2024\MAD2024\obj\Debug\MAD2024Prueba.csproj.CoreCompileInputs.cache
 D:\clays\Documents\MAD_2024\MAD2024\obj\Debug\MAD2024Prueba.exe
 D:\clays\Documents\MAD_2024\MAD2024\obj\Debug\MAD2024Prueba.pdb
+D:\clays\Documents\MAD_2024\MAD2024\obj\Debug\MAD2024Prueba.Pantallas.NOMINA.NOMINA_RECIBO.resources

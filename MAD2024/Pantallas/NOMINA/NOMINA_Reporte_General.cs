@@ -25,7 +25,7 @@ namespace MAD2024Prueba.Pantallas
 
             tblAlumnos = conex.IMPRIMIR_REPORTE_GENERAL();
 
-            //dataGridView1.DataSource = tblAlumnos;
+            dataGridView1.DataSource = tblAlumnos;
         }
 
         private void button2_Click_1(object sender, EventArgs e)

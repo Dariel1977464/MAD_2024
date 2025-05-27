@@ -21,6 +21,17 @@ where R.Fecha_Recibo = '2024'
 AND D.Nombre_Departamento = 'Compras'
 
 
+select ID_Recibo, Banco_ID, Cantidad_Depositada, Fecha_Recibo, GUID
+from
+((ReciboDeNomina inner join Empleado on ReciboDeNomina.Empleado_ID = Empleado.ID_Empleado)
+inner join Departamento on Empleado.Departamento_ID = Departamento.ID_Departamento)
+where ReciboDeNomina.Fecha_Recibo = '2024'
+AND Departamento.Nombre_Departamento = 'Compras'
+
+
+
+
+
 
 select E.Nombre, E.ApellidoPat, E.ApellidoMat, D.Nombre_Departamento 
 from Empleado E inner join Departamento D on E.Departamento_ID = D.ID_Departamento

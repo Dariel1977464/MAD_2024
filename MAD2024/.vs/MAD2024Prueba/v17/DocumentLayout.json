@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|D:\\clays\\Documents\\MAD_2024\\MAD2024\\pantallas\\nomina\\nomina_recibo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|solutionrelative:pantallas\\nomina\\nomina_recibo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|d:\\clays\\documents\\mad_2024\\mad2024\\pantallas\\conceptos\\conceptos_catalogo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|solutionrelative:pantallas\\conceptos\\conceptos_catalogo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|d:\\clays\\documents\\mad_2024\\mad2024\\enlacedb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|D:\\clays\\Documents\\MAD_2024\\MAD2024\\enlacedb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|solutionrelative:enlacedb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|D:\\clays\\Documents\\MAD_2024\\MAD2024\\pantallas\\nomina\\nomina_calcular.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|solutionrelative:pantallas\\nomina\\nomina_calcular.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|D:\\clays\\Documents\\MAD_2024\\MAD2024\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|solutionrelative:app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|D:\\clays\\Documents\\MAD_2024\\MAD2024\\pantallas\\nomina\\nomina_recibo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B99199B2-1EF0-4229-9389-461A8D4BA4C7}|MAD2024Prueba.csproj|solutionrelative:pantallas\\nomina\\nomina_recibo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,58 +17,20 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "DockedWidth": 363,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "NOMINA_RECIBO.cs [Design]",
-              "DocumentMoniker": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\Pantallas\\NOMINA\\NOMINA_RECIBO.cs",
-              "RelativeDocumentMoniker": "Pantallas\\NOMINA\\NOMINA_RECIBO.cs",
-              "ToolTip": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\Pantallas\\NOMINA\\NOMINA_RECIBO.cs [Design]",
-              "RelativeToolTip": "Pantallas\\NOMINA\\NOMINA_RECIBO.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T03:09:12.24Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "App.config",
-              "DocumentMoniker": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\App.config",
-              "RelativeDocumentMoniker": "App.config",
-              "ToolTip": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\App.config",
-              "RelativeToolTip": "App.config",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABEAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-05-26T22:41:00.427Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "NOMINA_RECIBO.cs",
-              "DocumentMoniker": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\Pantallas\\NOMINA\\NOMINA_RECIBO.cs",
-              "RelativeDocumentMoniker": "Pantallas\\NOMINA\\NOMINA_RECIBO.cs",
-              "ToolTip": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\Pantallas\\NOMINA\\NOMINA_RECIBO.cs",
-              "RelativeToolTip": "Pantallas\\NOMINA\\NOMINA_RECIBO.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAAACYAAAAMAAAAAAAAAA==",
+              "Title": "CONCEPTOS_catalogo.cs [Design]",
+              "DocumentMoniker": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\Pantallas\\CONCEPTOS\\CONCEPTOS_catalogo.cs",
+              "RelativeDocumentMoniker": "Pantallas\\CONCEPTOS\\CONCEPTOS_catalogo.cs",
+              "ToolTip": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\Pantallas\\CONCEPTOS\\CONCEPTOS_catalogo.cs [Design]",
+              "RelativeToolTip": "Pantallas\\CONCEPTOS\\CONCEPTOS_catalogo.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T20:18:28.479Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "NOMINA_CALCULAR.cs",
-              "DocumentMoniker": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\Pantallas\\NOMINA\\NOMINA_CALCULAR.cs",
-              "RelativeDocumentMoniker": "Pantallas\\NOMINA\\NOMINA_CALCULAR.cs",
-              "ToolTip": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\Pantallas\\NOMINA\\NOMINA_CALCULAR.cs",
-              "RelativeToolTip": "Pantallas\\NOMINA\\NOMINA_CALCULAR.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAcwCsAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T21:12:59.753Z"
+              "WhenOpened": "2025-05-29T22:20:02.245Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -90,9 +40,9 @@
               "RelativeDocumentMoniker": "EnlaceDB.cs",
               "ToolTip": "D:\\clays\\Documents\\MAD_2024\\MAD2024\\EnlaceDB.cs",
               "RelativeToolTip": "EnlaceDB.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAAAB4AAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAswE4BAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T20:12:35.303Z",
+              "WhenOpened": "2025-05-29T11:05:52.219Z",
               "EditorCaption": ""
             }
           ]

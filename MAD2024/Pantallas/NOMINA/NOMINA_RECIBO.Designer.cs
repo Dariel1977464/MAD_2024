@@ -67,8 +67,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridINCAPACIDAD = new System.Windows.Forms.DataGridView();
+            this.dataGridHORAS_EXTRA = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.DatoNomina_Total1 = new System.Windows.Forms.Label();
@@ -78,8 +78,8 @@
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPERCEPCION)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDEDUCCION)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridINCAPACIDAD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridHORAS_EXTRA)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -487,27 +487,27 @@
             this.label29.TabIndex = 89;
             this.label29.Text = "HORAS EXTRA";
             // 
-            // dataGridView1
+            // dataGridINCAPACIDAD
             // 
-            this.dataGridView1.ColumnHeadersHeight = 29;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.Location = new System.Drawing.Point(578, 612);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 15;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(556, 106);
-            this.dataGridView1.TabIndex = 92;
+            this.dataGridINCAPACIDAD.ColumnHeadersHeight = 29;
+            this.dataGridINCAPACIDAD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridINCAPACIDAD.Location = new System.Drawing.Point(578, 612);
+            this.dataGridINCAPACIDAD.Name = "dataGridINCAPACIDAD";
+            this.dataGridINCAPACIDAD.RowHeadersWidth = 15;
+            this.dataGridINCAPACIDAD.RowTemplate.Height = 24;
+            this.dataGridINCAPACIDAD.Size = new System.Drawing.Size(556, 106);
+            this.dataGridINCAPACIDAD.TabIndex = 92;
             // 
-            // dataGridView2
+            // dataGridHORAS_EXTRA
             // 
-            this.dataGridView2.ColumnHeadersHeight = 29;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView2.Location = new System.Drawing.Point(16, 612);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 15;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(556, 106);
-            this.dataGridView2.TabIndex = 91;
+            this.dataGridHORAS_EXTRA.ColumnHeadersHeight = 29;
+            this.dataGridHORAS_EXTRA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridHORAS_EXTRA.Location = new System.Drawing.Point(16, 612);
+            this.dataGridHORAS_EXTRA.Name = "dataGridHORAS_EXTRA";
+            this.dataGridHORAS_EXTRA.RowHeadersWidth = 15;
+            this.dataGridHORAS_EXTRA.RowTemplate.Height = 24;
+            this.dataGridHORAS_EXTRA.Size = new System.Drawing.Size(556, 106);
+            this.dataGridHORAS_EXTRA.TabIndex = 91;
             // 
             // panel4
             // 
@@ -567,8 +567,8 @@
             this.ClientSize = new System.Drawing.Size(1150, 1055);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dataGridINCAPACIDAD);
+            this.Controls.Add(this.dataGridHORAS_EXTRA);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.panel3);
@@ -608,8 +608,8 @@
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPERCEPCION)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDEDUCCION)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridINCAPACIDAD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridHORAS_EXTRA)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
@@ -658,8 +658,8 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridINCAPACIDAD;
+        private System.Windows.Forms.DataGridView dataGridHORAS_EXTRA;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label34;

@@ -25,6 +25,12 @@
           <AssociatedConnUserName>ClayserUsuarioPrueba</AssociatedConnUserName>
           <FullPath>DefaultQueries.sql</FullPath>
         </FileNode>
+        <FileNode Name="Llenado_de_Tablas.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-20ALCHGK\SQLEXPRESS:False:ClayserUsuarioPrueba</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-20ALCHGK\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName>ClayserUsuarioPrueba</AssociatedConnUserName>
+          <FullPath>Llenado_de_Tablas.sql</FullPath>
+        </FileNode>
         <FileNode Name="SQLQuery1.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-20ALCHGK\SQLEXPRESS:False:ClayserUsuarioPrueba</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>LAPTOP-20ALCHGK\SQLEXPRESS</AssociatedConnSrvName>

@@ -39,6 +39,12 @@ namespace WindowsFormsApplication1
         static private DataTable _tabla = new DataTable();
         static private DataSet _DS = new DataSet();
 
+        string RemoveWhitespace(string input)
+             {
+            return new string(input
+                .Where(c => !Char.IsWhiteSpace(c))
+                .ToArray());
+            }
         public DataTable obtenertabla
         {
             get
@@ -328,6 +334,42 @@ namespace WindowsFormsApplication1
 
         #region SP_IMPRIMIR
 
+        public DataTable Truncar()
+        {
+            var msg = "";
+            DataTable tabla = new DataTable();
+            try
+            {
+                conectar();
+                string qry = "TruncarRecibos";
+                //string qry = "DBsp_BancoLLenar";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandTimeout = 1200;
+
+                //var parametro1 = _comandosql.Parameters.Add("@Opc", SqlDbType.Int, 4);
+                //parametro1.Value = opc;
+
+
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(tabla);
+                // la ejecución del SP espera que regrese datos en formato tabla
+
+            }
+            catch (SqlException e)
+            {
+                msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            return tabla;
+        }
+
         public DataTable IMPRIMIR_DEPARTAMENTO()
         {
             var msg = "";
@@ -474,7 +516,6 @@ namespace WindowsFormsApplication1
             return tabla;
         }
 
-
         public DataTable IMPRIMIR_CONCEPTO()
             {
                 var msg = "";
@@ -546,6 +587,7 @@ namespace WindowsFormsApplication1
 
             return tabla;
         }
+
         public DataTable IMPRIMIR_RECIBO_1_EMPLEADO(int EMPLEADO_ID)
         {
             var msg = "";
@@ -798,6 +840,79 @@ namespace WindowsFormsApplication1
             return tabla;
         }
 
+        public DataTable IMPRIMIR_EN_NOMINA_HORAS_EXTRA(int EMPLEADO_ID)
+        {
+            var msg = "";
+            DataTable tabla = new DataTable();
+            try
+            {
+                conectar();
+                string qry = "sp_NominaRequisito_HorasExtra";
+                //string qry = "DBsp_BancoLLenar";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandTimeout = 1200;
+
+                var parametro1 = _comandosql.Parameters.Add("@Empleado", SqlDbType.Int, 1);
+                parametro1.Value = EMPLEADO_ID;
+
+
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(tabla);
+                // la ejecución del SP espera que regrese datos en formato tabla
+
+            }
+            catch (SqlException e)
+            {
+                msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            return tabla;
+        }
+
+        public DataTable IMPRIMIR_EN_NOMINA_INCAPACIDAD(int EMPLEADO_ID)
+        {
+            var msg = "";
+            DataTable tabla = new DataTable();
+            try
+            {
+                conectar();
+                string qry = "sp_NominaRequisito_INCAPACIDAD";
+                //string qry = "DBsp_BancoLLenar";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandTimeout = 1200;
+
+                var parametro1 = _comandosql.Parameters.Add("@Empleado", SqlDbType.Int, 1);
+                parametro1.Value = EMPLEADO_ID;
+
+
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(tabla);
+                // la ejecución del SP espera que regrese datos en formato tabla
+
+            }
+            catch (SqlException e)
+            {
+                msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            return tabla;
+        }
+
+
 
 
         #endregion
@@ -810,15 +925,260 @@ namespace WindowsFormsApplication1
             try
             {
                 conectar();
-                string qry = "DBsp_PuestoLenar";
+                string qry = "SP_AGREGAR_PUESTO";
                 _comandosql = new SqlCommand(qry, _conexion);
                 _comandosql.CommandType = CommandType.StoredProcedure;
                 _comandosql.CommandTimeout = 1200;
 
-                var parametro1 = _comandosql.Parameters.Add("@Nombre_de_Puesto", SqlDbType.Char, 30);
+                var parametro1 = _comandosql.Parameters.Add("@Nombre_de_Puesto", SqlDbType.VarChar, 30);
                 parametro1.Value = Dato1;
                 var parametro2 = _comandosql.Parameters.Add("@Proporcion", SqlDbType.Float);
                 parametro2.Value = Dato2;
+
+
+                _adaptador.InsertCommand = _comandosql;
+
+
+                _comandosql.ExecuteNonQuery();
+
+            }
+            catch (SqlException e)
+            {
+                add = false;
+                msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            //return add;
+        }
+
+        public void Agregar_DEPARTAMENTO(string Dato1, int Dato2)
+        {
+            var msg = "";
+            var add = true;
+            try
+            {
+                conectar();
+                string qry = "SP_AGREGAR_DEPARTAMENTO";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandTimeout = 1200;
+
+                var parametro1 = _comandosql.Parameters.Add("@Nombre_Departamento", SqlDbType.VarChar, 20);
+                parametro1.Value = Dato1;
+                var parametro2 = _comandosql.Parameters.Add("@SueldoBase_Diario", SqlDbType.Int);
+                parametro2.Value = Dato2;
+
+
+                _adaptador.InsertCommand = _comandosql;
+
+
+                _comandosql.ExecuteNonQuery();
+
+            }
+            catch (SqlException e)
+            {
+                add = false;
+                msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            //return add;
+        }
+
+        public void Agregar_EMPLEADO(
+            string Dato1, string Dato2, string Dato3, string Dato4, string Dato5,
+            string Dato6, string Dato7, string Dato8, string Dato9, string Dato10,
+            int Dato11, int Dato12, int Dato13, int Dato14, int Dato15)
+        {
+            var msg = "";
+            var add = true;
+            try
+            {
+                conectar();
+                string qry = "SP_AGREGAR_EMPLEADO";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandTimeout = 1200;
+
+                var parametro1 = _comandosql.Parameters.Add("Contrasena", SqlDbType.VarChar, 20);
+                parametro1.Value = Dato1;
+                var parametro2 = _comandosql.Parameters.Add("@Nombre", SqlDbType.VarChar, 30);
+                parametro2.Value = Dato2;
+                var parametro3 = _comandosql.Parameters.Add("@ApellidoPat", SqlDbType.VarChar, 30);
+                parametro3.Value = Dato3;
+                var parametro4 = _comandosql.Parameters.Add("@ApellidoMat", SqlDbType.VarChar, 30);
+
+
+
+                parametro4.Value = Dato4;
+                var parametro5 = _comandosql.Parameters.Add("@FechaNacimiento", SqlDbType.Date);
+                parametro5.Value = Dato5;
+                var parametro6 = _comandosql.Parameters.Add("@CURP", SqlDbType.VarChar, 18);
+                parametro6.Value = Dato6;
+                var parametro7 = _comandosql.Parameters.Add("@NSS", SqlDbType.VarChar, 11);
+                parametro7.Value = Dato7;
+                var parametro8 = _comandosql.Parameters.Add("@RFC", SqlDbType.VarChar, 13);
+                parametro8.Value = Dato8;
+                var parametro9 = _comandosql.Parameters.Add("@Email", SqlDbType.VarChar, 30);
+                parametro9.Value = Dato9;
+                var parametro10 = _comandosql.Parameters.Add("@Telefonos", SqlDbType.VarChar, 10);
+                parametro10.Value = Dato10;
+
+                var parametro11 = _comandosql.Parameters.Add("@Banco", SqlDbType.Int);
+                parametro11.Value = Dato11;
+                var parametro12 = _comandosql.Parameters.Add("@Empresa_FK", SqlDbType.Int);
+                parametro12.Value = Dato12;
+                var parametro13 = _comandosql.Parameters.Add("@PuestoFK", SqlDbType.Int);
+                parametro13.Value = Dato13;
+                var parametro14 = _comandosql.Parameters.Add("@DepartamentoFK", SqlDbType.Int);
+                parametro14.Value = Dato14;
+                var parametro15 = _comandosql.Parameters.Add("@DireccionFK", SqlDbType.Int);
+                parametro15.Value = Dato15;
+                
+
+
+                _adaptador.InsertCommand = _comandosql;
+
+
+                _comandosql.ExecuteNonQuery();
+
+            }
+            catch (SqlException e)
+            {
+                add = false;
+                msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            //return add;
+        }
+
+        public void Agregar_CONCEPTO(string Dato1, int Dato2, int Dato3, int Dato4, int Dato5, int Dato6)
+        {
+            var msg = "";
+            var add = true;
+            try
+            {
+                conectar();
+                string qry = "SP_AGREGAR_CONCEPTO";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandTimeout = 1200;
+
+                var parametro1 = _comandosql.Parameters.Add("@Nombre_Concepto", SqlDbType.VarChar, 30);
+                parametro1.Value = Dato1;
+                var parametro2 = _comandosql.Parameters.Add("@Tipo", SqlDbType.Int);
+                parametro2.Value = Dato2;
+                var parametro3 = _comandosql.Parameters.Add("@Obligatoria", SqlDbType.Int);
+                parametro3.Value = Dato3;
+                var parametro4 = _comandosql.Parameters.Add("@Mensual", SqlDbType.Int);
+                parametro4.Value = Dato4;
+                var parametro5 = _comandosql.Parameters.Add("@Valor", SqlDbType.Int);
+                parametro5.Value = Dato5;
+                var parametro6 = _comandosql.Parameters.Add("@Proporcion", SqlDbType.Int);
+                parametro6.Value = Dato6;
+
+
+                _adaptador.InsertCommand = _comandosql;
+
+
+                _comandosql.ExecuteNonQuery();
+
+            }
+            catch (SqlException e)
+            {
+                add = false;
+                msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            //return add;
+        }
+
+
+        public void Agregar_RECIBO_NOMINA(int EMPLEADO_ID, int MES, int AÑO)
+        {
+            var msg = "";
+            var add = true;
+            try
+            {
+                conectar();
+                string qry = "SP_AGREGAR_RECIBO_ALT";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandTimeout = 1200;
+
+                var parametro1 = _comandosql.Parameters.Add("@Empleados_FK", SqlDbType.Int);
+                parametro1.Value = EMPLEADO_ID;
+                var parametro2 = _comandosql.Parameters.Add("@Mes", SqlDbType.Int);
+                parametro2.Value = MES;
+                var parametro3 = _comandosql.Parameters.Add("@Año", SqlDbType.Int);
+                parametro3.Value = AÑO;
+
+
+                _adaptador.InsertCommand = _comandosql;
+
+
+                _comandosql.ExecuteNonQuery();
+
+            }
+            catch (SqlException e)
+            {
+                add = false;
+                msg = "Excepción de base de datos: \n";
+                msg += e.Message;
+                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            //return add;
+        }
+
+        public void Asignar_Concepto(int EMPLEADO_ID, int Concepto, string Fecha)
+        {
+            var msg = "";
+            var add = true;
+            try
+            {
+                conectar();
+                string qry = "SP_TEST_AsignarConceptos";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandTimeout = 1200;
+
+                var parametro1 = _comandosql.Parameters.Add("@Empleado", SqlDbType.Int);
+                parametro1.Value = EMPLEADO_ID;
+                var parametro2 = _comandosql.Parameters.Add("@Concepto", SqlDbType.Int);
+                parametro2.Value = Concepto;
+
+                Fecha = "03/01/2003";
+
+                var parametro3 = _comandosql.Parameters.Add("@fecha", SqlDbType.Date);
+                parametro3.Value = Fecha;
 
 
                 _adaptador.InsertCommand = _comandosql;

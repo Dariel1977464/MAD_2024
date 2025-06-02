@@ -52,11 +52,11 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 128);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 130);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1032, 227);
+            this.dataGridView1.Size = new System.Drawing.Size(1032, 506);
             this.dataGridView1.TabIndex = 56;
             // 
             // EMPLEADOS_catalogo
@@ -64,7 +64,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(1032, 355);
+            this.ClientSize = new System.Drawing.Size(1032, 636);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button4);
             this.Name = "EMPLEADOS_catalogo";

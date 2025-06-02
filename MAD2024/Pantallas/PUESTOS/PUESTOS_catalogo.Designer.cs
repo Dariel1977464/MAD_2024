@@ -39,7 +39,7 @@
             this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.Font = new System.Drawing.Font("Rockwell Condensed", 13.8F, System.Drawing.FontStyle.Bold);
-            this.button4.Location = new System.Drawing.Point(665, 12);
+            this.button4.Location = new System.Drawing.Point(663, 12);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(121, 54);
             this.button4.TabIndex = 55;
@@ -52,11 +52,11 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 110);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 104);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(796, 227);
+            this.dataGridView1.Size = new System.Drawing.Size(796, 413);
             this.dataGridView1.TabIndex = 56;
             // 
             // PUESTOS_catalogo
@@ -64,7 +64,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(796, 337);
+            this.ClientSize = new System.Drawing.Size(796, 517);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button4);
             this.Name = "PUESTOS_catalogo";

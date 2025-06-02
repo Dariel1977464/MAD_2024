@@ -27,9 +27,7 @@ LEFT OUTER JOIN INFORMATION_SCHEMA.TABLE_CONSTRAINTS ITC ON ITC.TABLE_NAME =
 IKU.TABLE_NAME and ITC.CONSTRAINT_NAME = IKU.CONSTRAINT_NAME
 WHERE IC.TABLE_CATALOG = 'ReciboDeNomina'
 and IC.TABLE_SCHEMA = 'dbo'
-
-and IC.TABLE_NAME = 'Empleado'
-
+and IC.TABLE_NAME = 'Concepto'
 order by IC.ORDINAL_POSITION
 
 -------------------------------------------------------------------------------------------

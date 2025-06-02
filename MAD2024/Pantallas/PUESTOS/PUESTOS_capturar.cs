@@ -53,7 +53,7 @@ namespace MAD2024Prueba.Pantallas
             //Dato2 Aca esta se llenaria igual, peor tendrias que castear el string a un float para que se guarde bien
 
 
-            conex.Agregar_PUESTO(Dato1, Dato2);
+            //-conex.Agregar_PUESTO(Dato1, Dato2);
 
             
 
@@ -81,6 +81,21 @@ namespace MAD2024Prueba.Pantallas
         }
         private void button3_Click_1(object sender, EventArgs e)
         {
+            string NombrePuesto = textBox1.Text;
+            int PorcentajeEntero = Int32.Parse(textBox2.Text);
+            float PorcentajeDecimal;
+            float.TryParse(textBox2.Text.ToString(), out PorcentajeDecimal);
+
+             PorcentajeDecimal = (PorcentajeDecimal / 100);
+
+            var conex = new EnlaceDB();
+
+            //conex.Agregar_PUESTO(NombrePuesto, PorcentajeDecimal);
+
+
+
+
+
             ID_Fila = (int)dataGridView1.CurrentRow.Cells[0].Value;
             if (Alterar_Fila == true)
             {
@@ -89,6 +104,10 @@ namespace MAD2024Prueba.Pantallas
                     //Hacer Logica Aqui
                 }
             }
+
+
+            Close();
+
         }
 
         private void radioButton1_CheckedChanged_1(object sender, EventArgs e)

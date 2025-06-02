@@ -20,51 +20,177 @@ namespace MAD2024Prueba.Pantallas
         {
             InitializeComponent();
         }
-
+       
         private void EMPLEADOS_capturar_Load(object sender, EventArgs e)
         {
             var conex = new EnlaceDB();
-            var tblAlumnos = new DataTable();
+            var TABLA_EMPLEADOS =      new DataTable();
+            var TABLA_DEPARTAMENTO = new DataTable();
+            var TABLA_PUESTO =           new DataTable();
+            int Filas_Departamento = 0;
+            int Filas_Puesto = 0;
 
-            tblAlumnos = conex.IMPRIMIR_EMPLEADO();
+            TABLA_EMPLEADOS = conex.IMPRIMIR_EMPLEADO();
+            TABLA_DEPARTAMENTO = conex.IMPRIMIR_DEPARTAMENTO();
+            TABLA_PUESTO = conex.IMPRIMIR_PUESTO();
 
-            dataGridView1.DataSource = tblAlumnos;
+            dataGridView1.DataSource = TABLA_EMPLEADOS;
+
+            #region COMBOBOX DEPARTAMENTO
+
+            Filas_Departamento = TABLA_DEPARTAMENTO.Rows.Count;
+            var ID_Departamento = TABLA_DEPARTAMENTO.Rows[0][0];
+
+            for (int i = 0; i < Filas_Departamento; i++)
+            {
+                //conex.Agregar_RECIBO_NOMINA(i, MesEscogido_int, AñoEscogido);
+
+                ID_Departamento = TABLA_DEPARTAMENTO.Rows[i][1];
+                comboBox3.Items.Add(ID_Departamento.ToString());
+            }
+
+            comboBox3.SelectedIndex = 0;
+
+            #endregion
+
+
+            #region COMBOBOX PUESTO
+            Filas_Puesto = TABLA_PUESTO.Rows.Count;
+            object ID_Puestos = TABLA_PUESTO.Rows[0][1];
+
+            for (int i = 0; i < Filas_Puesto; i++)
+            {
+                ID_Puestos = TABLA_PUESTO.Rows[i][1];
+                comboBox1.Items.Add(ID_Puestos.ToString());
+            }
+            comboBox1.SelectedIndex = 0;
+
+
+            #endregion
+
+
+
+
+            //int CantColumnasPuesto = TABLA_PUESTO.Rows.Count;
+            //var ID_Puesto = TABLA_PUESTO.Rows[0][0];
+
+            //for (int i = 0; i < CantColumnasPuesto; i++)
+            //{
+            //    //conex.Agregar_RECIBO_NOMINA(i, MesEscogido_int, AñoEscogido);
+
+            //    ID_Recibo = TABLA_PUESTO.Rows[i][2];
+            //    comboBox2.Items.Add(ID_Puesto.ToString());
+            //}
+
+
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+            //textBox2.ReadOnly = true;
+            string Nombre, ApPat, ApMat,
+                contra, FechaNacimiento, CURP, NSS,
+                RFC, Email;
+            string telefono;
+            int Banco, Departamento, Puesto, Direcion, empresa;
+
+
+            Nombre = textBox3.Text;
+            ApPat = textBox1.Text;
+            ApMat = textBox4.Text;
+            telefono = "8241260908";
+
+            contra = textBox2.Text;
+
+            var FechaTest = dateTimePicker1.Text;
+
+            FechaNacimiento = FechaTest.ToString();
+
+            //string sqlFormattedDate = myDateTime.ToString("yyyy-MM-dd HH:mm:ss.fff");
+//            FechaNacimiento = FechaTest.ToString("yyyy-MM-dd");
+
+            CURP = textBox5.Text;
+            NSS = textBox6.Text;
+            RFC = textBox7.Text;
+            Email = textBox9.Text;
+
+            Banco = 1;
+            Departamento = comboBox3.SelectedIndex + 1;
+            Puesto = comboBox1.SelectedIndex + 1;
+            Direcion = 1;
+            empresa = 1;
+
+
+            var conex = new EnlaceDB();
+            //conex.Agregar_EMPLEADO(contra, Nombre, ApPat, ApMat, FechaNacimiento, CURP, NSS, RFC, Email, telefono, Banco, empresa, Puesto, Departamento, Direcion);
+            //conex.
+
+
+            ID_Fila = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            if (Alterar_Fila == true)
+            {
+                if (MessageBox.Show("Se alterará fila con ID: " + ID_Fila.ToString(), "¿Esta seguro?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    //Hacer Logica Aqui
+                }
+
+            }
+
+
             Close();
-        }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        }
+        private void button3_Click(object sender, EventArgs e)
         {
+            //textBox2.ReadOnly = true;
+            string Nombre, ApPat, ApMat,
+                contra, FechaNacimiento, CURP, NSS,
+                RFC, Email;
+            string telefono;
+            int Banco, Departamento, Puesto, Direcion, empresa;
+
+
+            Nombre = textBox3.Text;
+            ApPat = textBox1.Text;
+            ApMat = textBox4.Text;
+            telefono = "8241260908";
+
+            contra = textBox2.Text;
+            FechaNacimiento = dateTimePicker1.Text;
+            CURP = textBox5.Text;
+            NSS = textBox6.Text;
+            RFC = textBox7.Text;
+            Email = textBox9.Text;
+
+            Banco = 1;
+
+            Nombre = RemoveWhitespace(Nombre);
+            ApPat = RemoveWhitespace(ApPat);
+            ApMat = RemoveWhitespace(ApMat);
+
+            //Departamento = comboBox1.SelectedIndex + 1;
+            //Puesto = comboBox1.SelectedIndex + 1;
+            //Direcion = 1;
+            //empresa = 1;
+
+
+            var conex = new EnlaceDB();
+            //conex.Agregar_EMPLEADO(contra, Nombre, ApPat, ApMat, FechaNacimiento, CURP, NSS, RFC, Email, telefono, Banco, empresa, Puesto, Departamento, Direcion);
+
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
 
-        }
+        
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            textBox2.ReadOnly = true;
-        }
+        
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -86,10 +212,10 @@ namespace MAD2024Prueba.Pantallas
             textBox3.Enabled = true;
             textBox6.Enabled = true;
 
-            comboBox1.Enabled = true;
-            comboBox2.Enabled = true;
+            //comboBox1.Enabled = true;
+            //comboBox2.Enabled = true;
 
-            button3.Text = "Agregar";
+            button1.Text = "Agregar";
 
             
             dataGridView1.Enabled = false;
@@ -109,12 +235,12 @@ namespace MAD2024Prueba.Pantallas
             dateTimePicker1.Enabled = false;
             dataGridView1.Enabled = false;
 
+            //comboBox1.Enabled = false;
             comboBox1.Enabled = false;
-            comboBox2.Enabled = false;
 
             
 
-            button3.Text = "Editar";
+            button1.Text = "Editar";
 
 
             Alterar_Fila = true;
@@ -129,7 +255,7 @@ namespace MAD2024Prueba.Pantallas
             textBox2.ReadOnly = false;
             dataGridView1.Enabled = true;
 
-            button3.Text = "Eliminar";
+            button1.Text = "Eliminar";
 
 
             
@@ -145,19 +271,7 @@ namespace MAD2024Prueba.Pantallas
 
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-            
-            ID_Fila = (int)dataGridView1.CurrentRow.Cells[0].Value;
-            if (Alterar_Fila == true)
-            {
-                if (MessageBox.Show("Se alterará fila con ID: " + ID_Fila.ToString(), "¿Esta seguro?", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    //Hacer Logica Aqui
-                }
-            }
-            
-        }
+
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -168,5 +282,13 @@ namespace MAD2024Prueba.Pantallas
         {
 
         }
+
+        string RemoveWhitespace(string input)
+            {
+            return new string(input
+                .Where(c => !Char.IsWhiteSpace(c))
+                .ToArray());
+            }
+
     }
 }

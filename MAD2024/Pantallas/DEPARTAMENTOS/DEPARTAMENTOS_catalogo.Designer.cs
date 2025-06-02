@@ -35,7 +35,7 @@
             // 
             // button4
             // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.Font = new System.Drawing.Font("Rockwell Condensed", 13.8F, System.Drawing.FontStyle.Bold);
@@ -52,11 +52,11 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 109);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 192);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 227);
+            this.dataGridView1.Size = new System.Drawing.Size(800, 349);
             this.dataGridView1.TabIndex = 56;
             // 
             // DEPARTAMENTOS_catalogo
@@ -64,7 +64,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(800, 336);
+            this.ClientSize = new System.Drawing.Size(800, 541);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button4);
             this.Name = "DEPARTAMENTOS_catalogo";

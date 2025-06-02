@@ -36,8 +36,13 @@ Nombre_Concepto		varchar(30),
 Tipo				bit, --(Deducción, Percepción)
 Obligatoria			bit,
 Mensual				bit,
-Valor				MONEY NULL
+Valor				MONEY NULL,
+Proporcion			bit default 0 --(0 no, 1 si)
 );
+
+select * from Concepto
+alter table concepto
+add Proporcion			bit default 0 --(0 no, 1 si)
 -------------------------------------------------------------------------------------------------------------------------
 create table Cuenta_De_Banco(
 ID_Banco		int IDENTITY(1, 1) primary key,

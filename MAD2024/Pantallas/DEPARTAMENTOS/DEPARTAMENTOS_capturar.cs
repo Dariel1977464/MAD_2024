@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApplication1;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MAD2024Prueba.Pantallas
 {
@@ -46,6 +47,18 @@ namespace MAD2024Prueba.Pantallas
 
         private void button3_Click(object sender, EventArgs e)
         {
+            var conex = new EnlaceDB();
+
+            string NombreDepa = textBox2.Text;
+            int SueldoBase = Int32.Parse(textBox3.Text);
+
+
+
+
+            //conex.Agregar_DEPARTAMENTO(NombreDepa, SueldoBase);
+
+
+
             ID_Fila = (int)dataGridView1.CurrentRow.Cells[0].Value;
             if (Alterar_Fila == true)
             {
@@ -54,6 +67,10 @@ namespace MAD2024Prueba.Pantallas
                     //Hacer Logica Aqui
                 }
             }
+
+            Close();
+
+
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)

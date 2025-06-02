@@ -10,15 +10,14 @@ AS
 
 GO
 ------------------------------------------------------------------------------------------------------------------
-CREATE PROCEDURE SP_IMPRIMIR_PUESTO
+create PROCEDURE SP_IMPRIMIR_PUESTO
 AS
  
  select
 
 ID_Puesto AS ID,			
 Titulo_de_Puesto AS [PUESTO],
-Proporcion AS PROPORCION
-
+concat ((Proporcion * 100), '%') AS [PROPORCION %]
 from Puesto
 
 GO
@@ -109,7 +108,7 @@ where E.ID_Empleado = @Empleado
 GO
 
 ------------------------------------------------------------------------------------------------------------------
-CREATE PROCEDURE SP_IMPRIMIR_CONCEPTO
+create PROCEDURE SP_IMPRIMIR_CONCEPTO
 AS
 
  select
@@ -117,7 +116,8 @@ AS
  Nombre_Concepto AS [CONCEPTO],
  Tipo AS TIPO,
  Obligatoria AS OBLIGATORIA,
- Mensual AS MENSUAL
+ Mensual AS MENSUAL,
+ Proporcion AS [PROPORCION]
  from Concepto				
 
 GO
@@ -244,6 +244,159 @@ inner join Puesto P on E.Puesto_ID = P.ID_Puesto
 group by Titulo_de_Puesto
 --order by Nombre_Departamento
 GO
+------------------------------------------------------------------------------------------------------------------
+create procedure sp_NominaRequisito_Percepciones
+@Empleado int
+
+as
+
+declare @SueldoDiario money
+set @SueldoDiario = dbo.F_NominaRequisito_SalarioDiario(@Empleado)
+
+select
+C.ID_Concepto AS [CLAVE],
+C.Nombre_Concepto AS [CONCEPTO],
+(case when C.Nombre_Concepto = 'Sueldo Diario' then @SueldoDiario else 0 end) AS [IMP GRAVADO],
+C.Valor AS [IMP EXT]
+from Empleado E
+inner join EmpleadoConceptos EC on E.ID_Empleado = EC.Empleado_ID
+inner join Concepto C on C.ID_Concepto = EC.Concepto_ID
+inner join Departamento D on E.Departamento_ID = D.ID_Departamento
+where E.ID_Empleado = @Empleado AND C.Tipo = 1 AND C.Nombre_Concepto != 'Horas Extra' AND C.Nombre_Concepto != 'Dia Incapacitado'
+order by E.Nombre
+
+go
+------------------------------------------------------------------------------------------------------------------
+
+
+create procedure sp_NominaRequisito_Deducciones
+@Empleado int
+
+as
+
+declare @BrutoTemp money
+declare @NetoTemp money
+
+select @BrutoTemp = dbo.F_SUELDO_BRUTO (@Empleado)
+
+--select @NetoTemp = dbo.F_SUELDO_BRUTO_ALT(@Empleado, 31)
+
+select
+
+C.ID_Concepto AS [CLAVE],
+C.Nombre_Concepto AS [CONCEPTO],
+
+--C.Valor AS [IMPORTE],
+
+(case when C.Proporcion = 0 then C.Valor
+else ((C.Valor / 100) * @BrutoTemp)
+end
+
+) AS [IMPORTE]
+
+
+from Empleado E
+inner join EmpleadoConceptos EC on E.ID_Empleado = EC.Empleado_ID
+inner join Concepto C on C.ID_Concepto = EC.Concepto_ID
+inner join Departamento D on E.Departamento_ID = D.ID_Departamento
+where E.ID_Empleado = @Empleado AND C.Tipo = 0 AND C.Nombre_Concepto != 'Horas Extra' AND C.Nombre_Concepto != 'Dia Incapacitado'
+order by E.Nombre
+
+go
+------------------------------------------------------------------------------------------------------------------
+create procedure sp_NominaRequisito_HorasExtra
+@Empleado int
+as
+
+--Pruebas
+
+
+declare @CantDias int
+select @CantDias = dbo.Dias_con_Horas_Extra(@Empleado)
+declare @SueldoDiario money
+set @SueldoDiario = dbo.F_NominaRequisito_SalarioDiario(@Empleado)
+
+declare @Empleado_Tiene_HorasExtra bit
+set @Empleado_Tiene_HorasExtra = dbo.F_NominaRequisito_HorasExtra_checar(@Empleado)
+
+declare @Cero_prueba money
+set @Cero_prueba = 0;
+
+declare @ConceptoID_HorasExtra int
+select @ConceptoID_HorasExtra = ID_Concepto from Concepto where Nombre_Concepto = 'Horas Extra'
+
+select
+(case when @Empleado_Tiene_HorasExtra = 1 then COUNT(EC.ID_EmpleadoConceptos) else 0 end) AS [DIAS],
+(case when @Empleado_Tiene_HorasExtra = 1 then (COUNT(EC.ID_EmpleadoConceptos) * 8) else 0 end) AS [HORAS],
+(case when @Empleado_Tiene_HorasExtra = 1 then (COUNT(EC.ID_EmpleadoConceptos) * @SueldoDiario) else @Cero_prueba end) AS [IMP PAGADO]
+from EmpleadoConceptos EC
+inner join Empleado E on EC.Empleado_ID = E.ID_Empleado
+inner join Concepto C on EC.Concepto_ID = C.ID_Concepto
+where EC.Empleado_ID = @Empleado AND EC.Concepto_ID = @ConceptoID_HorasExtra
+go
+------------------------------------------------------------------------------------------------------------------
+create procedure sp_NominaRequisito_INCAPACIDAD
+@Empleado int
+as
+
+
+declare @CantDias int
+select @CantDias = dbo.Dias_con_Incapacidad(@Empleado)
+declare @SueldoDiario money
+set @SueldoDiario = dbo.F_NominaRequisito_SalarioDiario(@Empleado)
+
+declare @Empleado_Tiene_HorasExtra bit
+set @Empleado_Tiene_HorasExtra = dbo.F_NominaRequisito_Incapacidad_checar(@Empleado)
+
+declare @Cero_prueba money
+set @Cero_prueba = 0;
+
+declare @ConceptoID_HorasExtra int
+select @ConceptoID_HorasExtra = ID_Concepto from Concepto where Nombre_Concepto = 'Horas Extra'
+
+select
+(case when @Empleado_Tiene_HorasExtra = 1 then COUNT(EC.ID_EmpleadoConceptos) else 0 end) AS [DIAS],
+(case when @Empleado_Tiene_HorasExtra = 1 then (COUNT(EC.ID_EmpleadoConceptos) * 8) else 0 end) AS [HORAS],
+(case when @Empleado_Tiene_HorasExtra = 1 then (COUNT(EC.ID_EmpleadoConceptos) * @SueldoDiario) else @Cero_prueba end) AS [IMP MONETARIO]
+from EmpleadoConceptos EC
+inner join Empleado E on EC.Empleado_ID = E.ID_Empleado
+inner join Concepto C on EC.Concepto_ID = C.ID_Concepto
+where EC.Empleado_ID = @Empleado AND EC.Concepto_ID = @ConceptoID_HorasExtra
+go
+
+
+
+
+
+
+
+select * from EmpleadoConceptos
+
+
+
+
+
+
+
+
+
+exec sp_NominaRequisito_HorasExtra 5
+
+
+
+
+
+
+
+
+
+
+
+
+exec sp_NominaRequisito_Percepciones 1
+exec sp_NominaRequisito_Deducciones 1
+
+
 
 
 
@@ -252,6 +405,7 @@ exec SP_IMPRIMIR_CONCEPTO
 exec SP_IMPRIMIR_EMPLEADO
 
 exec SP_IMPRIMIR_RECIBO
+truncate table ReciboDeNomina
 
 exec SP_IMPRIMIR_RECIBO_1_EMPLEADO 1
 

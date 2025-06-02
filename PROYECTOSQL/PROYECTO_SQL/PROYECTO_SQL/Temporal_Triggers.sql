@@ -7,7 +7,20 @@ BEGIN
 
 Insert into EmpleadoConceptos(Empleado_ID, Concepto_ID, Fecha)
 select	E.ID_Empleado, 1, GETDATE() from inserted E
+
+--ISR
+Insert into EmpleadoConceptos(Empleado_ID, Concepto_ID, Fecha)
+select	E.ID_Empleado, 7, GETDATE() from inserted E
+--IMSS
+Insert into EmpleadoConceptos(Empleado_ID, Concepto_ID, Fecha)
+select	E.ID_Empleado, 8, GETDATE() from inserted E
+
+
 --values (0,0,GETDATE())
+
+--select * from Concepto
+--select * from EmpleadoConceptos
+
 
 END
 -------------------------------------------------------------------------------------------------------------------------------------

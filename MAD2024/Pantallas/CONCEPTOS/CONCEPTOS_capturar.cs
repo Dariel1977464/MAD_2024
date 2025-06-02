@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApplication1;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MAD2024Prueba.Pantallas
 {
@@ -30,11 +31,55 @@ namespace MAD2024Prueba.Pantallas
 
             tblAlumnos = conex.IMPRIMIR_CONCEPTO();
 
+            comboBox2.Items.Add("DEDUCCION");
+            comboBox2.Items.Add("PERCEPCION");
+            comboBox2.SelectedIndex = 1;
+
+
+            comboBox1.Items.Add("De cantidad fija");
+            comboBox1.Items.Add("De proporción");
+            comboBox1.SelectedIndex = 0;
+
+
+
             dataGridView1.DataSource = tblAlumnos;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            var conex = new EnlaceDB();
+            //conex.Agregar_CONCEPTO()
+            string NombreConcepto = textBox1.Text;
+            int TipoConcepto = comboBox2.SelectedIndex + 1;
+            int Obligatoria_int;
+            bool Obligatoria = Convert.ToBoolean(checkBox1.CheckState);
+            int Valor = Int32.Parse(textBox2.Text);
+            bool mensual = Convert.ToBoolean(checkBox2.CheckState);
+            int mensual_int;
+            int Proporcion = comboBox1.SelectedIndex;
+
+            if (Obligatoria == true)
+            {
+                Obligatoria_int = 1;
+            }
+            else { Obligatoria_int = 0; }
+
+            if (mensual == true)
+            {
+                mensual_int = 1;
+            }
+            else
+            {
+                mensual_int = 0;
+            }
+
+            //conex.Agregar_CONCEPTO(NombreConcepto, TipoConcepto, Obligatoria_int, mensual_int, Valor, Proporcion);
+
+
+
+
+
+
             ID_Fila = (int)dataGridView1.CurrentRow.Cells[0].Value;
             if (Alterar_Fila == true)
             {
@@ -43,6 +88,10 @@ namespace MAD2024Prueba.Pantallas
                     //Hacer Logica Aqui
                 }
             }
+
+
+
+            Close();
         }
 
         private void button4_Click(object sender, EventArgs e)

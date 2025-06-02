@@ -16,7 +16,8 @@ namespace MAD2024Prueba.Pantallas.NOMINA
     {
         public string MesEscogido;
         public int AñoEscogido,
-            CantDias;
+            CantDias,
+            EmpleadoEscogido = 1;
         public NOMINA_RECIBO()
         {
             InitializeComponent();
@@ -30,13 +31,18 @@ namespace MAD2024Prueba.Pantallas.NOMINA
             var TABLA_DEDUCCIONES = new DataTable();
             var TABLA_RECIBO = new DataTable();
             var TABLA_EMPLEADO = new DataTable();
+            var TABLA_HORAS_EXTRA = new DataTable();
+            var TABLA_INCAPACIDAD = new DataTable();
 
-            TABLA_PERCEPCIONES = conex.IMPRIMIR_EN_NOMINA_PERCEPCIONES(1);
-            TABLA_DEDUCCIONES = conex.IMPRIMIR_EN_NOMINA_DEDUCCIONES(1);
-            TABLA_RECIBO = conex.IMPRIMIR_RECIBO_1_EMPLEADO(1);
-            TABLA_EMPLEADO = conex.IMPRIMIR_EMPLEADO_1(1);
+            TABLA_PERCEPCIONES = conex.IMPRIMIR_EN_NOMINA_PERCEPCIONES(EmpleadoEscogido);
+            TABLA_DEDUCCIONES = conex.IMPRIMIR_EN_NOMINA_DEDUCCIONES(EmpleadoEscogido);
+            TABLA_RECIBO = conex.IMPRIMIR_RECIBO_1_EMPLEADO(EmpleadoEscogido);
+            TABLA_EMPLEADO = conex.IMPRIMIR_EMPLEADO_1(EmpleadoEscogido);
+            TABLA_HORAS_EXTRA = conex.IMPRIMIR_EN_NOMINA_HORAS_EXTRA(EmpleadoEscogido);
+            TABLA_INCAPACIDAD = conex.IMPRIMIR_EN_NOMINA_INCAPACIDAD(EmpleadoEscogido);
 
             var Empleado_Numero = TABLA_EMPLEADO.Rows[0][0];
+            //var Empleado_Numero = 1;
             var Empleado_Nombre = TABLA_EMPLEADO.Rows[0][1];
             var Empleado_EMAIL = TABLA_EMPLEADO.Rows[0][2];
             var Empleado_Departamento = TABLA_EMPLEADO.Rows[0][5];
@@ -104,6 +110,9 @@ namespace MAD2024Prueba.Pantallas.NOMINA
 
             var Recibo_Fecha = TABLA_RECIBO.Rows[0][2];
 
+            var Cantidad_Depositada = TABLA_RECIBO.Rows[0][4];
+
+            DatoNomina_Total1.Text = "$" + Cantidad_Depositada.ToString();
 
 
             ValorTest = Recibo_Fecha.ToString();
@@ -126,11 +135,20 @@ namespace MAD2024Prueba.Pantallas.NOMINA
                 CantDias = 31;
             }
 
+            DatoNomina_Fecha1.Text = Recibo_Fecha.ToString();
+
+            ValorTest = Recibo_Fecha.ToString();
+            ValorTest.Substring(2);
+            //ValorTest.Remove(0,1);
 
 
-            DatoNomina_Fecha1.Text = CantDias.ToString() + "/" + MesEscogido + "/" + AñoEscogido.ToString();
-            DatoNomina_Fecha2.Text = "01" + "/" + MesEscogido + "/" + AñoEscogido.ToString();
-            DatoNomina_Fecha3.Text = CantDias.ToString() + "/" + MesEscogido + "/" + AñoEscogido.ToString();
+            DatoNomina_Fecha2.Text = ValorTest.ToString();
+            DatoNomina_Fecha3.Text = Recibo_Fecha.ToString();
+
+
+            //DatoNomina_Fecha1.Text = CantDias.ToString() + "/" + MesEscogido + "/" + AñoEscogido.ToString();
+            //DatoNomina_Fecha2.Text = "01" + "/" + MesEscogido + "/" + AñoEscogido.ToString();
+            //DatoNomina_Fecha3.Text = CantDias.ToString() + "/" + MesEscogido + "/" + AñoEscogido.ToString();
             #endregion
 
             //CantDias;
@@ -141,6 +159,8 @@ namespace MAD2024Prueba.Pantallas.NOMINA
 
             dataGridPERCEPCION.DataSource = TABLA_PERCEPCIONES;
             dataGridDEDUCCION.DataSource = TABLA_DEDUCCIONES;
+            dataGridHORAS_EXTRA.DataSource = TABLA_HORAS_EXTRA;
+            dataGridINCAPACIDAD.DataSource = TABLA_INCAPACIDAD;
 
         }
 

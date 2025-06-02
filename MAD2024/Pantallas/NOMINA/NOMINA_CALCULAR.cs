@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApplication1;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MAD2024Prueba.Pantallas
@@ -15,7 +16,8 @@ namespace MAD2024Prueba.Pantallas
     public partial class NOMINA_CALCULAR : Form
     {
         //int CantDias = 31;
-        string MesEscogido;
+        string MesEscogido_string;
+        int MesEscogido_int;
         int AñoEscogido;
         public NOMINA_CALCULAR()
         {
@@ -40,8 +42,18 @@ namespace MAD2024Prueba.Pantallas
 
             textBox1.Text = "2025";
 
-            MesEscogido = comboBox1.Text;
-            AñoEscogido = Int32.Parse(textBox1.Text);
+
+            //ComboboxItem selectedCar = (ComboboxItem)comboBox2.SelectedItem;
+            //int selecteVal = Convert.ToInt32(selectedCar.Value);
+
+
+            //object selectedValue = comboBox1.SelectedItem;
+
+
+
+            //MesEscogido_int = comboBox1.Items.IndexOf(selectedValue);
+
+            
 
             
 
@@ -51,7 +63,62 @@ namespace MAD2024Prueba.Pantallas
 
 
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var conex = new EnlaceDB();
 
+            //conex.Truncar();
+
+
+            MesEscogido_int = comboBox1.SelectedIndex + 1;
+
+            MesEscogido_string = comboBox1.Text;
+            AñoEscogido = Int32.Parse(textBox1.Text);
+
+
+
+            
+            var TABLA_EMPLEADO = new DataTable();
+            TABLA_EMPLEADO = conex.IMPRIMIR_EMPLEADO();
+            int CantColumnasEmpleados = TABLA_EMPLEADO.Rows.Count;
+
+            for (int i = 1; i <= CantColumnasEmpleados; i++)
+            {
+                conex.Agregar_RECIBO_NOMINA(i, MesEscogido_int, AñoEscogido);
+            }
+
+
+
+
+
+            //conex.Agregar_RECIBO_NOMINA(3, 1, 2023);
+
+
+
+            //if (comboBox1.Text == "Mayo")
+            //{
+            //    MessageBox.Show("Do you want to continue?", "Question", MessageBoxButtons.YesNo);
+            //}
+
+            //NOMINA_RECIBO frm = new NOMINA_RECIBO();
+
+            NOMINA_EscogerEmpleado frm = new NOMINA_EscogerEmpleado();
+
+            //frm.MesEscogido = MesEscogido_string;
+            //frm.AñoEscogido = AñoEscogido;
+            frm.ShowDialog();
+
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            NOMINA_EscogerEmpleado frm = new NOMINA_EscogerEmpleado();
+
+            //frm.MesEscogido = MesEscogido_string;
+            //frm.AñoEscogido = AñoEscogido;
+            frm.ShowDialog();
+        }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
@@ -78,19 +145,6 @@ namespace MAD2024Prueba.Pantallas
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //if (comboBox1.Text == "Mayo")
-            //{
-            //    MessageBox.Show("Do you want to continue?", "Question", MessageBoxButtons.YesNo);
-            //}
 
-            NOMINA_RECIBO frm = new NOMINA_RECIBO();
-            frm.MesEscogido = MesEscogido;
-            frm.AñoEscogido = AñoEscogido;
-            frm.ShowDialog();
-
-
-        }
     }
 }
